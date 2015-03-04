@@ -1,0 +1,637 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FUENTE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Plantilla creada por Eduardo Mosqueira Rey a partir de un original de
+% Rational Software Corporation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONFIGURACIÓN TEXSTUDIO DEL CORRECTOR ORTOGRÁFICO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% !TeX spellcheck = en_US
+% Usar el lenguaje es_ES para la corrección en castellano
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TIPO DE DOCUMENTO Y PAQUETES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, a4paper, titlepage]{article}
+
+\usepackage[spanish, es-tabla]{babel} % Soporte multilenguaje para LaTeX.
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} % Interfaz flexible para definir las dimensiones del documento
+\usepackage[utf8]{inputenc} % Aceptar diferentes tipos de codificación de caracteres de entrada (en este caso usamos la codificación Unicode UTF-8)
+\usepackage{graphicx} % Soporte aumentado para gráficos 
+\usepackage{captdef}
+\usepackage{color} % Para usar colores
+\usepackage{hyperref} % Para manejar referencias cruzadas. P.ej. añadir hiperenlaces al índice
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\includegraphics[width=15cm]{Imagenes/Simbolo_logo_UDC.png}
+
+% Lista de tamaños: \Huge, \huge, \LARGE, \Large, \large, \small, \footnotesize, \tiny
+\vspace{3cm}
+
+\begin{center}
+\includegraphics[scale=0.3]{Imagenes/1a_Practica_ER_14-15.png}
+\end{center}
+
+\begin{flushright}
+	
+	\LARGE{\textbf{ JoinMe!}}
+	
+	\LARGE{\textbf{Documento de visión}}
+	
+	\large{\textbf{Version 1.0}}
+\end{flushright}
+\vspace{1cm}
+\begin{center}
+José Antonio López Sebio\\
+Pablo Paz Varela\\
+Grupo ER-12-03\\
+\end{center}
+
+
+\vspace{2cm}
+\begin{center}
+	\large{\textbf{Revision History}}
+	
+    \begin{tabular}{ | p{4cm} | p{2cm} | p{5cm} | p{4cm} |}
+    \hline
+    \textbf{Date} & \textbf{Version} & \textbf{Description} & \textbf{Author} \\ \hline
+    \textless 02/02/2014\textgreater & \textless 0.1\textgreater & \textless details\textgreater & \textless name\textgreater  \\ \hline
+    & & & \\ \hline
+    & & & \\ \hline
+    \end{tabular}
+\end{center}
+
+\end{titlepage}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INDICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+El objetivo de este documento es presentar, analizar y definir de manera global las necesidades y características del proyecto \textbf{JoinMe!}. Se centra en las capacidades que son necesarias por parte de los \textit{stakeholders} y por parte de los usuarios finales, y por qué existen estas necesidades. Los detalles de cómo \textbf{JoinMe!} satisface estas necesidades están detalladas en los caso de uso y en las especificaciones suplementarias.
+
+
+%**********************************************************
+\subsection{Objetivo}
+%**********************************************************
+
+\textbf{JoinMe!} tiene por objetivo mantener en contacto a gente con cualquier aspecto en común y recuperar el contacto perdido con otra gente. A diferencia de otras redes sociales, \textbf{JoinMe!} incluye características novedosas que serán descritas en el presente documento.
+
+%**********************************************************
+\subsection{Alcance}
+%**********************************************************
+
+El alcance de este documento de visión está asociado con el proyecto \textbf{JoinMe!}, donde capturamos la esencia del proyecto describiendo los requisitos de alto nivel y las restricciones de diseño. Damos una vista general del sistema desde una vista de comportamiento, así como también una entrada al proceso de aprobación del proyecto comunicando lo fundamental.
+
+
+%**********************************************************
+\subsection{Definiciones, Acrónimos, y Abreviaturas}
+%**********************************************************
+
+Todas las definiciones, acrónimos y abreviaturas necesarias para la compresión del
+documento de visión están descritas en el documento adjunto como Glosario.
+
+
+%**********************************************************
+\subsection{Referencias}
+%**********************************************************
+
+Los documentos que se han usado como referencia son:
+\begin{enumerate}
+\item Práctica 1: Artefactos de la Fase de Inicio, Ingeniería de Requisitos, E. Mosqueira, 2015.
+\item Plantillas-Fase de Inicio E. Mosqueira, 2015.
+\item T1 Introducción handout, E. Mosqueira, 2015.
+\item T2 Los requisitos en la fase de inicio handout, E. Mosqueira, 2015.
+\item T3 Modelo de casos de uso handout, E. Mosqueira, 2015.
+\end{enumerate}
+
+%**********************************************************
+\subsection{Visión general}
+%**********************************************************
+
+El presente documento se organiza en XXXX capítulos, donde se abordan las distintas características del proyecto \textbf{JoinMe!}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Posicionamiento}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%**********************************************************
+\subsection{Oportunidad de negocio}
+%**********************************************************
+
+Actualmente, las redes sociales son uno de los pilares del negocio electrónico, siendo Facebook el líder indiscutible en este mercado, facturando 2.600 millones de euros en el ejercicio del 2014\footnote{Facebook gana 2.600 millones de euros en 2014 doblando los beneficios de hace un año \url{http://www.marketingdirecto.com/actualidad/social-media-marketing/facebook-gana-2-600-millones-de-euros-en-2014-doblando-los-beneficios-de-hace-un-ano/}}, muy por encima de su competidor directo Google+, pero sin olvidarnos de la red social de \textit{microblogging} Twitter, con una facturación de 479 millones de dólares\footnote{ La facturación de Twitter creció un 111\% en 2014 \url{http://www.dealerworld.es/redes-sociales/la-facturacion-de-twitter-crecio-un-111-en-2014 }}. En este mercado en alza es donde introduciremos nuestro proyecto, creando un híbrido que abarque todas las funcionales y mejoras de las existentes, atrayendo así a los usuarios.
+
+
+%**********************************************************
+\subsection{Problema planteado}
+%**********************************************************
+
+\begin{center}
+	\begin{tabular}{| p{7cm} | p{8cm} |}
+ 		\hline
+		\textbf{El problema de} & Combinar amigos, conocidos, fotos, mensajes, ficheros, intereses y otros conceptos relacionados con el ámbito social.\\ \hline
+		\textbf{Afecta} & Usuarios y empresas anunciantes. \\ \hline	
+		\textbf{El impacto asociado es} & Tener amigos, conocidos, contactos etc... organizados de una manera eficiente y fácil.\\ \hline	
+		\textbf{Una solución adecuada sería}	&  Una aplicación web con diseño adaptable a dispositivos móviles, con una interfaz simple entendible por la gran mayoría de potenciales usuarios. \\ \hline	    	\end{tabular}
+\end{center}
+
+%**********************************************************
+\subsection{Posición del producto}
+%**********************************************************
+
+
+\begin{center}
+	\begin{tabular}{| p{4cm} | p{11cm} |}
+ 		\hline
+		\textbf{Para} & Usuarios y empresas. \\ \hline
+		\textbf{Quien} & Necesite estar informado de sus intereses, y empresas que necesiten centrar su publicidad haciendo segmentación de datos.\\ \hline	
+		\textbf{El producto \textbf{JoinMe!}} & es una aplicación Web. \\ \hline	
+		\textbf{Que} & Permite gestionar amistades, conocidos, intereses, páginas, ficheros de diferentes formas, como por ejemplo círculos, además de posibilitar la realización de otras funciones.\\ \hline
+		\textbf{Al contrario} & Otros productos, no incluyen características tan novedosas, o dejan de un lado visiones tradicionales.\\ \hline	    	
+		\textbf{Nuestro producto} & Es un híbrido de lo que existen actualmente y funcionalidades totalmente novedodas.\\ \hline	    						
+	\end{tabular}
+\end{center}
+
+
+%**********************************************************
+\section{Usuarios y partes interesadas}
+%**********************************************************
+
+Esta sección muestra un perfil de los participantes y de los usuarios involucrados en
+el proyecto, así como los problemas más importantes que estos perciben para enfocar la
+solución propuesta hacia ellos.
+
+
+%**********************************************************
+\subsection{Demografía del mercado}
+%**********************************************************
+
+Según un reciente estudio de Pew Research Center, 71\% de encuestados usa Facebook. El 56\% de ellos entre 65 años a más emplea la red social. Sin embargo, el mayor porcentaje está entre los usuarios que tienen 18 a 29 años. Los resultados de este estudio podemos verlos en la siguiente tabla.\\
+
+\begin{minipage}{12cm}
+\begin{center}
+
+\begin{tabular}{|p{5cm}|c|c|}
+\hline 
+All internet users & 2013 & 2014 \\ 
+\hline 
+Men & 71\% & 71\% \\ 
+
+Women & 66 & 66 \\ 
+\hline 
+White, Non-Hispanic & 76 & 77 \\ 
+
+Black, Non-Hispanic & 71 & 71 \\ 
+
+Hispanic & 76 & 67 \\ 
+
+18-29 & 73 & 73 \\ 
+
+30-49 & 84 & 87 \\ 
+ 
+50-64 & 60 & 63 \\ 
+
+65+ & 45 & 56 \\ 
+\hline 
+High school grad less & 71 & 70 \\ 
+
+Some college & 75 & 71 \\ 
+
+College+ & 68 & 74 \\ 
+\hline 
+Less tahn \$30000/yr & 76 & 77 \\ 
+
+\$30000-\$49000 & 76 & 69 \\ 
+
+\$50000-\$74000 & 68 & 74 \\ 
+
+\$75000+ & 69 & 72 \\ 
+\hline 
+Urban & 75 & 71 \\ 
+
+Suburban & 69 & 72 \\ 
+
+Rural & 71 & 69 \\ 
+\hline 
+
+\end{tabular} 
+
+\tabcaption{Usuarios de Facebook}\footnote{Demographics of Key Social Networking Platforms \url{http://www.pewinternet.org/2015/01/09/demographics-of-key-social-networking-platforms-2/}} 
+\end{center}
+\end{minipage}\\
+
+El objectivo de \textbf{JoinMe!} es conseguir ese éxito entre usuarios jóvenes, pero también captar usuarios senior con una interfaz más simple.
+
+
+
+\newpage
+%**********************************************************
+\subsection{Resumen de usuarios}
+%**********************************************************
+
+\begin{center}
+	\begin{tabular}{| p{4cm} | p{3cm} | p{8cm} |}
+		\hline
+		\textbf{Nombre} & \textbf{Descripción} & \textbf{Responsabilidad}  \\ \hline
+		Usuario registrado &  
+		Usuario principal del sistema.  & Tareas de gestión de su perfil, lista de amigos, círculos, páginas, fotos, videos. Por ejemplo: 
+		\begin{itemize}
+		    \item Modificar datos perfil
+            \item Añadir contactos a circulo
+			\item Ingresar en un grupo
+			\item Subir fotografías
+        \end{itemize} \\ \hline	
+        Empresa & Usuario que representa a una empresa anunciante
+        & Tareas de gestión de sus anuncios: 
+        \begin{itemize}
+        	\item Crear anuncio
+        	\item Añadir anuncio a una categoría
+        	\item Modificar categoría de anuncio
+        	\item Eliminar anuncio
+        \end{itemize} \\ \hline
+	\end{tabular}
+\end{center}
+
+%**********************************************************
+\subsection{Entorno de usuario}
+%**********************************************************
+
+Los usuarios utilizarán la aplicación en el entorno que ellos decidan, es decir un ordenador o dispositivos móviles, pues es es una aplicación web adaptable al tipo de escritorio o dispositivo móvil que se esté utilizando.
+
+
+
+%**********************************************************
+\subsection{Alternativas y competencia}
+%**********************************************************
+
+Actualmente en el mercado existen varias redes sociales, de las que podemos destacar como principales alternativas a \textbf{JoinMe!} y principalmente competencia a las siguientes:
+
+\begin{itemize}
+\item Facebook
+\item Instagram
+\item Google+
+\item Linkedin
+\item Twitter
+\end{itemize}
+
+%----------------------------------------
+\subsubsection{Facebook}
+%----------------------------------------
+Es un sitio web de redes sociales. Originalmente era un sitio para estudiantes de la Universidad de Harvard, pero se abrió a cualquier persona con una cuenta de correo electrónico.
+
+Actualmente tiene más de 1350 millones de usuarios, y está traducido a 110 idiomas. Permite compartir fotos, videos, noticias y opiniones. Creación de listas de amigos, unión a grupos, páginas de empresa.
+
+Su principal debilidad es la falta de privacidad y su complicada interfaz gráfica, que  muchas veces es incomprensible por la gran mayoría de usuarios.
+
+%----------------------------------------
+\subsubsection{Instagram}
+%----------------------------------------
+Instagram es una red social y aplicación para compartir fotos y vídeos. Permite a los usuarios aplicar efectos fotográficos como filtros, marcos, colores retro y vintage, y posteriormente compartir las fotografías en diferentes redes sociales como Facebook, Tumblr, Flickr y Twitter.
+
+%----------------------------------------
+\subsubsection{Google+}
+%----------------------------------------
+Servicio de red social operado por Google Inc. El servicio, puesto en funcionamiento el 28 de junio de 2011, está basado en HTML5.
+
+Google+ integra distintos servicios: Círculos, Hangouts, Intereses y Comunidades.3 Google+ también estará disponible como una aplicación de escritorio y como una aplicación móvil, pero sólo en los sistemas operativos Android e iOS.
+
+Es el rival principal de Facebook.
+%----------------------------------------
+\subsubsection{Linkedin}
+%----------------------------------------
+Red social orientada a negocios, es decir, se basa en la idea de tener como contactos a personas afines profesionalmente para mejorar las relaciones laborares o encontrar nuevas oportunidades en el mercado laboral.
+
+%----------------------------------------
+\subsubsection{Twitter}
+%----------------------------------------
+Es una red social de microblogging. Permite compartir mensajes de un máximo de 140 caracteres a tus seguidores y demás usuarios de la red. En este mensaje también se pueden incluir imágenes y vídeos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Visión general del producto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+El producto \textbf{JoinMe!} proporciona a los usuarios facilidades para hacer un seguimiento de sus intereses así como recuperar el contacto perdido con otra gente. También permite la organización de estos contactos, el intercambio de ficheros, publicación de noticias y opiniones, gestión y publicación de fotos y videos, así como su edición, participación en grupos de personas con intereses afines, chat, posibilidad de mejora de funcionalidades usando la moneda virtual de \textbf{JoinMe!}.
+
+
+%**********************************************************
+\subsection{Perspectiva del producto}
+%**********************************************************
+
+La red social \textbf{JoinMe!} pretende atraer a los usuarios facilitando las funcionalidades de las redes sociales actuales y añadiendo mejoras y funcionalidades nuevas. Todo el funcionamiento es independiente de otros sistemas externos que puedan complicar el funcionamiento y rendimiento del sistema, y además facilitando al diseño de una interfaz simple.
+
+%**********************************************************
+\subsection{Resumen de las Capacidades}
+%**********************************************************
+
+
+
+\begin{center}
+\textbf{Resumen de los beneficios}
+	\begin{tabular}{| p{7cm} | p{8cm} | }
+		\hline
+		\textbf{Beneficio del cliente} & \textbf{Características soportadas} \\ \hline
+		Organización de contactos en círculos & Los círculos permiten tener organizados a los contactos, mejorando las opciones de privacidad. Es decir, hace más intuitivo con quien compartimos la información. \\ \hline
+		Grupos jerárquicos & La finalidad de los
+grupos es poder reunir a un conjunto de gente con algo en común. Dentro los grupos, puede haber subgrupos facilitando la organización de los mismos.	\\ \hline
+		Filtros & Mejora la experiencia del usuario, permitiendo filtrar facilmente la información que quiere ver en la página principal. \\ \hline
+	\end{tabular}
+\end{center}
+
+%**********************************************************
+\subsection{Suposiciones y dependencias}\label{cap:Dependencias}
+%**********************************************************
+
+El sistema, está diseñado para que no depende de sistemas externos, salvo los siguientes:
+
+\begin{itemize}
+\item Conexión a internet.
+\end{itemize}
+%**********************************************************
+\subsection{Coste y precio}
+%**********************************************************
+
+De acuerdo con la Guía Salarial del Sector TIC en Galicia para el 2014-2015\footnote{Guia Salarial Sector TIC Galicia \url{http://www.vitaedigital.com/docs/o_543_f_585.pdf}} el salario medio anual bruto para el puesto de Analista Programador Java Junior es de 17000 euros. Siendo para el Jefe de Proyecto de 29000 euros. Con lo que nos queda un salario bruto mensual de 1416.67 euros y de 2416.67 euros respectivamente\footnote{Para el cálculo del salario bruto mensual se ha partido de que el bruto anual es en 12 pagas}.
+
+\begin{center}
+
+\begin{tabular}{|p{4.5cm}|p{3cm}|p{3cm}|p{2cm}|}
+\hline 
+Puesto & Salario anual bruto & Salario mensual bruto & Salario bruto hora \\ 
+\hline 
+Analista-Programador Java & 17000 & 1416,67 & 8,43\\ 
+\hline 
+Jefe de Proyecto & 29000 & 2416,67 & 14,38 \\ 
+\hline 
+\end{tabular} 
+\tabcaption{Coste recursos humanos}
+\end{center}
+
+Se calcula que el proyecto tendrá una duración aproximada de 122.53 horas, por lo que el coste total de Recursos Humanos ha sido de:
+
+$ (122,53*2*8,42)+(122,53*14,38) = 2141.39 $ 
+
+\subsubsection{Recursos materiales}
+
+Para el desarrollo del proyecto, estimamos oportuno el uso de los siguientes recursos.
+
+En la siguiente tabla puede verse el desglose del coste en recursos materiales\footnote{Los servidores y certificado SSL fueron contratados con una empresa cercana \url{https://dinahosting.gal/dedicados}}.
+
+\begin{center}
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Nombre recursos & Descripción & Precio \\ 
+\hline 
+Control de versiones Git & GitHub Bronze & 20,6 euros/mes \\ 
+\hline 
+Servidor desarrollo dedicado & Dell PowerEdge 860 & 38,7 euros/mes \\ 
+\hline 
+Servidor web dedicado  & Dell PowerEdge R200 & 40 euros/mes \\ 
+\hline 
+Certificado SSL & Certificado SSL
+Web Server
+con EV & 252 euros/año \\ 
+\hline 
+
+\end{tabular}
+\tabcaption{Desglose coste recursos materiales}\label{tab:coste_material}
+\end{center}
+
+
+\begin{center}
+\includegraphics[scale=0.4]{imagenes/git_precios.png}
+\figcaption{Licencia Git para organización}\label{fig:git_precios}
+\end{center}
+
+\subsubsection{Costes totales}
+
+Los costes totales estimados ascienden a 2141.39 euros de RRHH y 450 euros de recursos materiales, lo que suma un total de 2591.38 euros.
+
+\begin{center}
+
+\includegraphics[scale=0.5]{Imagenes/costes_desglose.png}
+\figcaption{Desglose de costes}\label{fig:cotes_desglose}
+\end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Características del producto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%**********************************************************
+\subsection{Login y Registro de Usuarios}
+%**********************************************************
+Un usuario se podrá dar de alta en el sistema proporcionando sus datos reales, que conformarán los datos de su perfil. También puede registrarse y hacer loguin mediante el uso del DNI-e o de otro certificado digital válido.
+
+%**********************************************************
+\subsection{Gestión de amigos}
+%**********************************************************
+Los usuarios gestionarán las peticiones de amistad:
+\begin{itemize}
+\item Aceptar/Rechazar petición recibida
+\item Enviar petición de amistad
+\end{itemize}
+Los usuarios también podrán eliminar a sus contactos. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Grafo de amigos}
+Un usuario podrá consultar un grafo de amistades, donde podrá ver de forma clara el grado de separación entre él y otro usuario.
+
+\subsection{Gestión de círculos}
+
+Los usuarios podrán organizar a sus contactos en círculos. Esto permite mayor facilidad a la hora de gestionar la privacidad de las publicaciones y demás información (fotos, videos...).
+
+Un usuario puede pertenecer a varios círculos o a ninguno.En cuanto a la gestión de los mismos, un usuario podrá:
+\begin{itemize}
+\item Crear/eliminar circulo
+\item Añadir/Eliminar contacto a/de un círculo
+\end{itemize}
+
+\subsection{Muro}\label{cap:Muro}
+
+Los usuarios dispondrán de un muro, donde aparecerán sus acciones en orden cronológico. Dichas acciones pueden ser del siguiente tipo:
+
+\begin{itemize}
+\item Cambios en la frase de estado del usuario.
+\item Cambios en los datos o en la foto de perfil.
+\item Hacer nuevos amigos.
+\item Crear un grupo o unirse a uno.
+\item Hacer comentarios.
+\item Escribir una publicación.
+\end{itemize}
+
+En cuanto a la privacidad del muro, solo los amigos de un usuario tienen acceso al muro, donde además, tienen la posibilidad de dejar un mensaje, que será público para el resto de amigos del propietario del muro. 
+
+\subsection{Entradas}\label{cap:entradas}
+
+Una entrada es una publicación en el muro. Dicha publicación puede contener distintos ítems, tales como:
+\begin{itemize}
+\item Vídeos
+\item Imágenes
+\item Texto
+\item Enlaces
+\item Localizaciones
+\end{itemize}
+Y la combinación de los mismos. Además las entradas podrán ser clasificadas en categorías, existiendo categorías estándar y las propias del usuario.
+
+Respecto a la privacidad de la entrada, el creador de la entrada puede eligir que grado de privacidad desea, si bien público, o asignarlas a sus círculos.
+
+\subsection{Grupos}
+
+Cualquier usuario del sistema podrá crear un grupo. Los grupos tienen por finalidad reunir a personas afines a un mismo tema. El creador del grupo pasará a ser el administrador del mismo, además podrá crear subgrupos.
+
+Los grupos contarán con su propio muro, donde los miembros podrán compartir fotografías y otros elementos.
+
+También disponen de un foro de discusión, y un apartado de noticias donde el administrador informará sobre lo que estime oportuno.
+
+\subsection{Fotografías}
+
+Los usuarios podrán subir fotografías en las que podrán etiquetar a sus amigos, estas fotografías pueden ser organizadas en álbumes.
+
+Un usuario etiquetado podrá eliminar las etiquetas que no le interesen.
+
+Todas estas acciones se verán reflejadas en el muro como tal y como descrito en la sección \ref{cap:Muro}.
+
+\subsection{Comentarios}
+
+Cualquier acción que esté reflejada en el Muro (\ref{cap:Muro}) de un usuario puede ser comentada por otro usuario.
+No es posible la anidación de comentarios, pero sí hace referencia a otros usuario escribiendo su nombre dentro del comentario.
+
+\subsection{Chat}
+
+Los usuarios que sean amigos tienen la posibilidad de intercambiar mensajes privados entre ellos.
+
+\subsection{Página de inicio}\label{cap:pag_inicio}
+
+Cada usuario tendrá una página de inicio donde verá la actividad de sus contactos.
+Esta página de inicio tiene la opción de filtrar (\ref{cap:Filtros}) las noticias para mejorar la experiencia del usuario. 
+No tiene paginación, es de  \textit{scroll} infinito. 
+
+\subsection{Filtros}\label{cap:Filtros}
+
+Los filtros permiten seleccionar las actividades que queremos ver en la Página de Inicio (\ref{cap:pag_inicio}). Estos filtros pueden ser de :
+\begin{itemize}
+\item Personas.
+\item Grupos.
+\item Categorías.
+\end{itemize}
+Donde se puede elegir, que se muestren o se oculten.
+
+\subsection{Ficheros}
+
+La red social \textbf{JoinMe!} facilitará a todos los usuarios 5Gb de espacio gratuito para ficheros personales, que podrán ser compartidos con los demás usuarios especificando la privacidad de la misma forma que las entradas (\ref{cap:entradas}).
+\subsection{Monedas}
+
+Con el objetivo de monetizar la red social, se ha diseñado una moneda virtual \textbf{JoinMe! Coins} que permitirá al usuario mejorar ciertas características de la red social, como por ejemplo:
+\begin{itemize}
+\item Aumentar capacidad de almacenamiento.
+\item Mejorar calidad de las fotografías y vídeos.
+\item Plantillas para mostrar la información del perfil.
+\end{itemize}
+Para hacer más fácil la compra de estas funcionalidades, \textbf{JoinMe!} dispondrá de un catálogo de productos.
+
+Los usuarios también podrán hacerse transferencias de \textbf{JoinMe! Coins}.
+
+\subsection{Publicidad}
+
+Las empresas interesadas en publicitarse en la red social, podrán crearse un perfil de usuario - como empresa - para gestionar sus anuncios. 
+Los anuncios estarán clasificados en categorías (las categorías  estándar de las entradas), pudiendo estar en varias categorías a la vez. Los usuarios podrán puntuar los anuncios, indicando si los consideran aptos o interesantes, u ofensivos, mejorando la percepción del éxito de la campaña a la empresa.
+
+\section{Restricciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Además de las restricciones descritas en el Capítulo \ref{cap:Dependencias}, el sistema tiene las siguientes restricciones:
+\begin{itemize}
+\item El sistema no debe depender de la instalación de ningún plugin, ni software adicional.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rangos de calidad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Esta sección define los rangos de calidad para el rendimiento, robustez, tolerancia a
+fallos, facilidad de uso y características similares para \textbf{JoinMe!}.
+
+El sistema deberá estar disponible 24 horas al día 7 días a la semana, y el impacto de las labores de mantenimiento debe ser mínimo para el usuario.
+
+En cuanto a la usabilidad, tiene que ser lo más simple posible, para llegar al máximo de usuario posibles, tal y como fue dicho en apartados anteriores. 
+
+Rendimiento: El sistema debe responder a las peticiones en un tiempo aceptable, al igual que su motor de búsqueda.
+
+Tolerancia a fallos: En el caso de que el sistema experimente algún fallo, el software debe poder 
+almacenar el estado actual del sistema y cargarlo una vez se haya solucionado
+el problema.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Precedencia y prioridad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Las características las vamos a clasificar con Prioridad A,B o C respectivamente, siendo A la prioridad más alta, y C la más baja.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Otros requisitos del producto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ver documento de especificación suplementaria.
+
+%**********************************************************
+\subsection{Estándares aplicables}
+%**********************************************************
+
+\textbf{JoinMe!} es una red social basada en una aplicación Web, por lo que seguirá los siguientes estándares:
+\begin{itemize}
+\item Estándares W3C\footnote{Estándares W3C \url{http://www.w3c.es/estandares/}}, tanto para aplicación web estándar como para la adaptable a dispositivos móviles.
+\end{itemize}
+
+%**********************************************************
+\subsection{Requisitos del sistema}
+%**********************************************************
+
+\textit{{\color{blue}[Define any system requirements necessary to support the application. These can include the supported host operating systems and network platforms, configurations, memory, peripherals, and companion software.]}}
+
+%**********************************************************
+\subsection{Requisitos de rendimiento}
+%**********************************************************
+
+
+\begin{itemize}
+\item El usuario debe tener una respuesta a sus peticiones en un tiempo razonable. En el orden de 2 segundos para una conexión a Internet de 10Mb/s.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Requisitos de documentación}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ver documento de especificación suplementaria.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

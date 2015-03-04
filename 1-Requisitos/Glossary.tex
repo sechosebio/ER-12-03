@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FUENTE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Plantilla creada por Eduardo Mosqueira Rey a partir de un original de 
+% Rational Software Corporation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONFIGURACIÓN TEXSTUDIO DEL CORRECTOR ORTOGRÁFICO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% !TeX spellcheck = en_US
+% Usar el lenguaje es_ES para la corrección en castellano
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TIPO DE DOCUMENTO Y PAQUETES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, a4paper, titlepage]{article}
+
+% Indicamos que el lenguaje es el español 
+\usepackage[spanish]{babel} % Soporte multilenguaje para LaTeX.
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} % Interfaz flexible para definir las dimensiones del documento
+\usepackage[utf8]{inputenc} % Aceptar diferentes tipos de codificación de caracteres de entrada (en este caso usamos la codificación Unicode UTF-8)
+\usepackage{graphicx} % Soporte aumentado para gráficos 
+\usepackage{color} % Para usar colores
+\usepackage{hyperref} % Para manejar referencias cruzadas. P.ej. añadir hiperenlaces al índice
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\includegraphics[width=15cm]{Imagenes/Simbolo_logo_UDC.png}
+
+% Lista de tamaños: \Huge, \huge, \LARGE, \Large, \large, \small, \footnotesize, \tiny
+\vspace{3cm}
+
+\begin{center}
+\includegraphics[scale=0.3]{Imagenes/1a_Practica_ER_14-15.png}
+\end{center}
+
+
+\begin{flushright}
+	
+	\LARGE{\textbf{ JoinMe!}}
+	
+	\LARGE{\textbf{Glosario}}
+	
+	\large{\textbf{Version 1.0}}
+\end{flushright}
+\vspace{1cm}
+\begin{center}
+José Antonio López Sebio\\
+Pablo Paz Varela\\
+Grupo ER-12-03\\
+\end{center}
+
+
+\vspace{2cm}
+\begin{center}
+	\large{\textbf{Revision History}}
+	
+    \begin{tabular}{ | p{4cm} | p{2cm} | p{5cm} | p{4cm} |}
+    \hline
+    \textbf{Date} & \textbf{Version} & \textbf{Description} & \textbf{Author} \\ \hline
+    \textless dd/mm/yyyy\textgreater & \textless x.x\textgreater & \textless details\textgreater & \textless name\textgreater  \\ \hline
+    & & & \\ \hline
+    & & & \\ \hline
+    \end{tabular}
+\end{center}
+
+\end{titlepage}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INDICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textit{{\color{blue}[The introduction of the Glossary provides an overview of the entire document. Present any information the reader might need to understand the document in this section. This document is used to define terminology specific to the problem domain, explaining terms that may be unfamiliar to the reader of the use-case descriptions or other project documents. Often, this document can be used as an informal data dictionary, capturing data definitions so that use-case descriptions and other project documents can focus on what the system must do with the information. This document should be saved in a file called Glossary.]}}
+
+%**********************************************************
+\subsection{Purpose}
+%**********************************************************
+
+\textit{{\color{blue}[Specify the purpose of this Glossary.]}}
+
+%**********************************************************
+\subsection{Scope}
+%**********************************************************
+
+\textit{{\color{blue}[A brief description of the scope of this Glossary; what Project(s) it is associated with and anything else that is affected or influenced by this document.]}}
+
+%**********************************************************
+\subsection{References}
+%**********************************************************
+
+\textit{{\color{blue}[This subsection provides a complete list of all documents referenced elsewhere in the Glossary. Identify each document by title, report number (if applicable), date, and publishing organization. Specify the sources from which the references can be obtained. This information may be provided by reference to an appendix or to another document.]}}
+
+%**********************************************************
+\subsection{Overview}
+%**********************************************************
+
+\textit{{\color{blue}[This subsection describes what the rest of the Glossary contains and explains how the document is organized.]}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Definitions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textit{{\color{blue}[The terms defined here form the essential substance of the document. They can be defined in any order desired, but generally alphabetical order provides the greatest accessibility.]}}
+
+%**********************************************************
+\subsection{\textless aTerm\textgreater}  
+%**********************************************************
+
+\textit{{\color{blue}[The definition for \textless aTerm\textgreater is presented here. As much information as the reader needs to understand the concept should be presented.]}}
+
+%**********************************************************
+\subsection{\textless anotherTerm\textgreater}   
+%**********************************************************
+
+\textit{{\color{blue}[The definition for \textless anotherTerm\textgreater is presented here. As much information as the reader needs to understand the concept should be presented.]}}
+
+%**********************************************************
+\subsection{\textless aGroupofTerms\textgreater} 
+%**********************************************************
+
+\textit{{\color{blue}[Sometimes it is useful to organize terms into groups to improve readability. For example, if the problem domain contains terms related to both accounting and building construction (as would be the case if we were developing a system to manage construction projects), presenting the terms from the two different sub-domains might prove confusing to the reader. To solve this problem, we use groupings of terms. In presenting the grouping of terms, provide a short description that helps the reader understand what \textless aGroupofTerms\textgreater represents. Terms presented within the group should be organized alphabetically for easy access.]}}
+
+%----------------------------------------
+\subsubsection{\textless aGroupTerm\textgreater}  
+%----------------------------------------
+
+\textit{{\color{blue}[The definition for \textless aGroupTerm\textgreater is presented here. Present as much information as the reader needs to understand the concept.]}}
+
+%----------------------------------------
+\subsubsection{\textless anotherGroupTerm\textgreater}  
+%----------------------------------------
+
+\textit{{\color{blue}[The definition for \textless anotherGroupTerm\textgreater is presented here. Present as much information as the reader needs to understand the concept.]}}
+
+%**********************************************************
+\subsection{\textless aSecondGroupofTerms\textgreater}  
+%**********************************************************
+
+%----------------------------------------
+\subsubsection{\textless yetAnotherGroupTerm\textgreater}  
+%----------------------------------------
+
+\textit{{\color{blue}[The definition for the term is presented here. Present as much information as the reader needs to understand the concept.]}}
+
+%----------------------------------------
+\subsubsection{\textless andAnotherGroupTerm\textgreater}  
+%----------------------------------------
+
+\textit{{\color{blue}[The definition for the term is presented here. Present as much information as the reader needs to understand the concept.]}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{UML Stereotypes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textit{{\color{blue}[This section contains or references specifications of Unified Modeling Language (UML) stereotypes and their semantic implications—a textual description of the meaning and significance of the stereotype and any limitations on its use—for stereotypes already known or discovered to be important for the system being modeled. The use of these stereotypes may be simply recommended or perhaps even made mandatory; for example, when their use is required by an imposed standard or when it is felt that their use makes models significantly easier to understand. This section may be empty if no additional stereotypes, other than those predefined by the UML and the Rational Unified Process, are considered necessary.]}}
+
+\end{document}
