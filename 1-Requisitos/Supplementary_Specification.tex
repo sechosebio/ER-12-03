@@ -1,0 +1,265 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FUENTE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Plantilla creada por Eduardo Mosqueira Rey a partir de un original de 
+% Rational Software Corporation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONFIGURACIÓN TEXSTUDIO DEL CORRECTOR ORTOGRÁFICO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% !TeX spellcheck = en_US
+% Usar el lenguaje es_ES para la corrección en castellano
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TIPO DE DOCUMENTO Y PAQUETES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, a4paper, titlepage]{article}
+
+% Indicamos que el lenguaje es el español 
+\usepackage[spanish]{babel} % Soporte multilenguaje para LaTeX.
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} % Interfaz flexible para definir las dimensiones del documento
+\usepackage[utf8]{inputenc} % Aceptar diferentes tipos de codificación de caracteres de entrada (en este caso usamos la codificación Unicode UTF-8)
+\usepackage{graphicx} % Soporte aumentado para gráficos 
+\usepackage{color} % Para usar colores
+\usepackage{hyperref} % Para manejar referencias cruzadas. P.ej. añadir hiperenlaces al índice
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\includegraphics[width=15cm]{Imagenes/Simbolo_logo_UDC.png}
+
+% Lista de tamaños: \Huge, \huge, \LARGE, \Large, \large, \small, \footnotesize, \tiny
+\vspace{3cm}
+
+\begin{center}
+	\includegraphics[scale=0.3]{Imagenes/1a_Practica_ER_14-15.png}
+\end{center}
+
+\begin{flushright}
+
+	\LARGE{\textbf{JoinMe!}}
+	
+	\LARGE{\textbf{Supplementary Specification}}\footnote{Plantilla \LaTeX  creada por Eduardo Mosqueira Rey  basada en el original de Rational Software Corp.}
+	
+	\large{\textbf{Version 1.0}}
+\end{flushright}
+\vspace{1cm}
+\begin{center}
+	José Antonio López Sebio\\
+	Pablo Paz Varela\\
+	Grupo ER-12-03\\
+\end{center}
+
+\vspace{2cm}
+\begin{center}
+	\large{\textbf{Revision History}}
+	
+    \begin{tabular}{ | p{4cm} | p{2cm} | p{5cm} | p{4cm} |}
+    \hline
+    \textbf{Date} & \textbf{Version} & \textbf{Description} & \textbf{Author} \\ \hline
+    05/03/2015 & 1.0 & Versión inicial & ER-12-03  \\ \hline
+    & & & \\ \hline
+    & & & \\ \hline
+    \end{tabular}
+\end{center}
+
+\end{titlepage}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INDICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%**********************************************************
+\subsection{Propósito}
+%**********************************************************
+
+La finalidad de este documento es definir los requisitos no funcionales para la red social \textbf{Join Me!}. Recopilaremos en este documento todos aquellos requisitos que no capturamos en el modelo de casos de uso.
+
+%**********************************************************
+\subsection{Alcance}
+%**********************************************************
+
+Este documento detalla la especificación suplementaria para JoinMe!, una red social. Desarrollaremos una aplicación web sencilla, fácil de utilizar, pero con todas las funcionalidades relevantes de la competencia y algunas novedosas.
+
+Esta especificación recoge los requisitos no funcionales, incluyendo aspectos como usabilidad, fiabilidad, rendimiento, soporte, restricciones de diseño y otras necesidades del sistema. También se recogen en este documento aquellos requisitos funcionales que son comunes a varios casos de uso.
+
+%**********************************************************
+\subsection{Definiciones, Acrónimos y Abreviaturas}
+%**********************************************************
+
+Ver el Glosario.
+
+%**********************************************************
+\subsection{Referencias}
+%**********************************************************
+
+Este documento hace referencia a:\\
+
+1. Visión de JoinMe!, v1.0, 2015, ER-12-03
+
+2. Glosario de JoinMe!, v1.0, 2015, ER-12-03
+
+%**********************************************************
+\subsection{Resumen}
+%**********************************************************
+
+Este documento se organiza en diferentes secciones, clasificando los requisitos según afecten a:
+
+\begin{itemize}
+	\item Funcionalidades comunes
+	\item Usabilidad
+	\item Fiabilidad
+	\item Rendimiento
+	\item Soporte
+	\item Restricciones de diseño
+	\item Ayuda para el usuario
+	\item Advertencias legales
+	\item Estándares aplicables
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Funcionalidad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Esta sección lista requisitos funcionales que son comunes a varios casos de uso.
+
+%**********************************************************
+\subsection{Autenticación de los usuarios}
+%**********************************************************
+
+Para acceder a la red social, los usuarios deberán registrarse previamente proporcionando sus datos reales. Además, el usuario puede darse de alta utilizando un certificado digital(o el DNIe) para que su cuenta se muestre como verificada.
+
+Los usuarios accederán con su nombre de usuario y contraseña personales.
+
+%**********************************************************
+\subsection{Registro y gestión de errores}
+%**********************************************************
+
+Deben registrarse todos los errores en almacenamiento persistente. Se detallará el mensaje del error, el código del error, el lugar donde falló el sistema y la fecha y hora.
+
+%**********************************************************
+\subsection{Seguridad}
+%**********************************************************
+
+Todo uso de \textbf{JoinMe!} requiere la autenticación de los usuarios. Todas las comunicaciones serán cifradas.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Usabilidad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Esta sección lista los requisitos que afectan a la usabilidad del sistema.
+
+%**********************************************************
+\subsection{Facilidad de Uso}
+%**********************************************************
+
+Cualquier usuario que sepa usar un navegador sabrá utilizar nuestro sistema sin ningún tipo de aprendizaje. Se comprobará en la fase beta mediante pruebas de usabilidad.
+
+%**********************************************************
+\subsection{Internacionalización}
+%**********************************************************
+
+Para que nuestra red social pueda tener éxito internacionalmente, su interfaz gráfica debe ser fácilmente traducible a cuaquier idioma.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fiabilidad }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Esta sección lista los requisitos de fiabilidad.
+
+%**********************************************************
+\subsection{Disponibilidad}
+%**********************************************************
+
+La aplicación debe estar disponible 24h al día, 7 días a la semana; y no estar caída más de un 2\% del tiempo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rendimiento}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Esta sección describe las necesidades de rendimiento del sistema.
+
+%**********************************************************
+\subsection{Capacidad}
+%**********************************************************
+
+El sistema soportará inicialmente hasta 10000 usuarios concurrentemente. Además, deberá ser escalable, para aumentar su capacidad según vayan aumentando los usuarios registrados y activos en un futuro.
+
+%**********************************************************
+\subsection{Tiempo de respuesta}
+%**********************************************************
+
+Los usuarios quieren que la aplicación responda lo más rápido posible, para disfrutar de una experiencia fluida y agradable. Por lo general, el tiempo de respuesta a cualquier acción no debería superar los 2 segundos. Si hubiese alguna operación que necesite más tiempo, deberíamos indicárselo al usuario, por ejemplo, con un icono que indique un tiempo de carga.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Soporte}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Esta sección lista los requisitos que mejoran el soporte o mantenimiento del sistema.
+
+%**********************************************************
+\subsection{Mantenibilidad}
+%**********************************************************
+
+El equipo de desarrollo se pondrá de acuerdo para seguir un estándar de codificación y una convención de nombrado. Además, utilizaremos el desarrollo guiado por pruebas (TDD) para facilitar la corrección temprana de bugs y el mantenimiento del sistema.
+
+%**********************************************************
+\subsection{Software necesario}
+%**********************************************************
+
+Los usuarios podrán acceder a \textbf{JoinMe!} a través de un navegador, sin necesidad de instalar software adicional. El sistema debería estar optimizado para los navegadores más populares, como Chrome, Firefox...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Restricciones de diseño}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%**********************************************************
+\subsection{Medios de pago}
+%**********************************************************
+
+Para obtener \textbf{JoinMe! Coins}, la moneda virtual en nuestra red social, los usuarios utilizarán dinero real. Debemos gestionar los pagos a través de tarjeta de crédito, Paypal y otros en el futuro.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Documentación de usuario online y sistema de ayuda}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+La ayuda online cubrirá todas las características del sistema. Adicionalmente, se le presentarán al usuario tutoriales muy sencillos la primera vez que use alguna funcionalidad menos obvia o intuitiva.
+
+Dispondremos de un FAQ con las dudas más recurrentes.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Licencias}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+No será necesario comprar la licencia de ningún producto para la realización del proyecto.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Advertencias legales, derechos de autor y otros}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+El software \textbf{JoinMe!} es una marca registrada por ER-12-03. Su copia o distribución sin consentimiento del propietario está prohibida.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Estándares aplicables}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{JoinMe!} cumplirá con los estándares para el desarrollo de aplicaciones web del W3C.
+
+\end{document}
