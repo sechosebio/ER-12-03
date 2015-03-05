@@ -1,0 +1,182 @@
+%
+% Libro online bastante completo para consulta de Latex: http://en.wikibooks.org/wiki/LaTeX/
+% Versión en castellano: http://es.wikibooks.org/wiki/Manual_de_LaTeX
+\documentclass[12pt, a4paper, titlepage]{article}
+
+\usepackage[spanish]{babel} % Soporte multilenguaje para LaTeX.
+
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} % Interfaz flexible para definir las dimensiones del documento
+
+\usepackage[utf8]{inputenc} % Aceptar diferentes tipos de codificación de caracteres de entrada (en este caso usamos la codificación Unicode UTF-8)
+
+\usepackage{graphicx} % Soporte aumentado para gráficos 
+\usepackage{hyperref} % Para manejar referencias cruzadas. P.ej. añadir hiperenlaces al índice
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\includegraphics[width=15cm]{Imagenes/Simbolo_logo_UDC.png}
+
+% Lista de tamaños: \Huge, \huge, \LARGE, \Large, \large, \small, \footnotesize, \tiny
+\vspace{3cm}
+
+\begin{center}
+\includegraphics[scale=0.3]{Imagenes/1a_Practica_ER_14-15.png}
+\end{center}
+
+\begin{flushright}
+	\LARGE{\textbf{ JoinMe!}}\\
+	\LARGE{\textbf{Especificación de casos de uso}}\\
+	\large{\textbf{Version 1.0}}
+	
+		
+\end{flushright}
+\vspace{1cm}
+\begin{center}
+José Antonio López Sebio\\
+Pablo Paz Varela\\
+Grupo ER-12-03\\
+\end{center}
+
+\vspace{2cm}
+\begin{center}
+	\large{\textbf{Histórico}}
+	
+    \begin{tabular}{ | p{4cm} | p{2cm} | p{5cm} | p{4cm} |}
+    \hline
+    \textbf{Date} & \textbf{Version} & \textbf{Description} & \textbf{Author} \\ \hline
+    05/02/2014 & 1.0 & Borrador 1  & ER-12-03  \\ \hline
+     & 1.1 &  & ER-12-03  \\ \hline
+     & 1.2 &  & ER-12-03  \\ \hline
+     & 1.3 &  & ER-12-03  \\ \hline
+    \end{tabular}
+\end{center}
+
+\end{titlepage}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INDICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+El objetivo de este documento es mostrar una breve descripción de la red social \textbf{JoinMe!} y describir los actores conocidos y su interacción con el sistema.
+Este documento muestra una visión de alto nivel, además de una visión más detallada de los casos de uso más importantes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Actores}
+\begin{description}
+
+\item [Usuario] Usuario que inicia sesión dentro del sistema, para estar en contacto con sus amigos, participar en grupos, compartir fotos/ficheros/videos...
+
+\item [Empresa] Usuario que representa a una empresa e inicia sesión dentro del sistema para gestionar sus anuncios.
+
+\end{description}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resumen de casos de uso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+    \item [CU01 - Registrar usuario]: Para que un usuario pueda utilizar las funcionalidades que ofrece la red social
+   	\item [CU02 - Modificación de perfil]:
+    \item [CU03 - Aceptar solicitud de amistad]:
+    
+    \item [CU04 - Rechazar solicitud de amistad]:
+    
+    \item [CU05 - Ver amigos]:
+    \item [CU06 - Enviar solicitud de amistad]:
+    \item [CU07 - Crear círculo]:
+    \item [CU06 - Borrar círculo]:
+	\item [CU07 - Añadir amigo a círculo]:
+	\item [CU08 - Eliminar amigo de un círculo]:
+	\item [CU09 - Cambiar frase de estado]:
+	\item [CU10 - Publicar acción en el muro]:
+	\item [CU11 - Crear entrada]:
+	\item [CU12 - Borrar entrada]:
+	\item [CU13 - Editar entrada]:
+	\item [CU14 - Crear grupo]:
+	\item [CU15 - Eliminar grupo]:
+	\item [CU16 - Ingresar en un grupo]:
+	\item [CU17 - Salir de un grupo]:
+	\item [CU19 - Publicar noticia en un grupo]:
+	\item [CU20 - Crear hilo en un foro de discusión de grupo]:
+	\item [CU21 - Responder en un hilo del grupo]:
+	\item [CU22 - Crear albúm de fotografías]:
+	\item [CU23 - Subir fotografía]:
+	\item [CU24 - Borrar albúm de fotografías]:
+	\item [CU25 - Borrar fotografía]:
+	\item [CU26 - Etiquetar contacto en fotografía]:
+	\item [CU27 - Borrar etiqueta de fotografía]:
+	\item [CU28 - Edición sencilla de fotos]:
+	\item [CU29 - Subir vídeo]:
+	\item [CU30 - Borrar vídeo]:
+	\item [CU31 - Comentar una publicación]:
+	\item [CU32 - Borrar comentario]:
+	\item [CU33 - Enviar mensaje privado]:
+	\item [CU34 - Mostrar página de início]:
+	\item [CU35 - Filtrar información en página de início]:
+	\item [CU36 - Subir ficheros]:
+	\item [CU37 - Borrar ficheros]:
+	\item [CU38 - Comprar \textit{JoinMe! Coins}]:
+	\item [CU39 - Regalar \textit{JoinMe! Coins}]:
+	\item [CU40 - Consultar catálogo de productos]:
+	\item [CU41 - Comprar un producto]:
+	\item [CU42 - Indicar relevancia de un anuncio]:
+	\item [CU43 - Crear un anuncio]:
+	\item [CU44 - Publicar un anuncio]:
+	
+	
+	
+\end{description}
+          
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Diagramas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\section{Casos de Uso}
+\subsection{CU01 -}
+\subsubsection{Actores}
+\subsubsection{Breve descripción}
+\subsubsection{Flujo básico}
+\subsubsection{Flujo alternativo}
+\subsubsection{Precondiciones}
+\subsubsection{Postcondiciones}
+
+
+\subsection{CU02 -}
+\subsubsection{Actores}
+\subsubsection{Breve descripción}
+\subsubsection{Flujo básico}
+\subsubsection{Flujo alternativo}
+\subsubsection{Precondiciones}
+\subsubsection{Postcondiciones}
+
+%----------------------------------------
+\section{Matrices de trazabilidad}  
+%----------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\large Matriz de trazabilidad Características-Casos de uso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  
+%**********************************************************
+\end{document}
