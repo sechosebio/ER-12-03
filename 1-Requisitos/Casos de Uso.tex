@@ -96,7 +96,7 @@ o el DNIe. Pero siempre necesario un email y contraseña.
    	\item [CU02 - Modificación de perfil]: Un usuario registrado puede querer modificar alguno de los datos almacenados en la red social, como puede ser su email o contraseña.
     \item [CU03 - Aceptar solicitud de amistad]: Los usuarios regristrados pueden aceptar las solicitudes de amistad enviadas por otros usuarios. Estas solicitudes aparecerán en un área de notificaciones.
     
-    \item [CU04 - Rechazar solicitud de amistad]: Los usuarios regristrados peuden rechazar las solicitudes de amistad que consideren oportunas y que tienen disponibles en el área de notificaciones.
+    \item [CU04 - Rechazar solicitud de amistad]: Los usuarios regristrados pueden rechazar las solicitudes de amistad que consideren oportunas y que tienen disponibles en el área de notificaciones.
     
     \item [CU05 - Ver amigos]: Un usuario registrado puede consultar los amigos accediento a la lista de los mismos. Haciendo click en el nombre de su amigo, accederá al perfil del mismo.
     
@@ -195,49 +195,121 @@ o el DNIe. Pero siempre necesario un email y contraseña.
 
 \subsection{CU01 - Registrar usuario}
 \subsubsection{Actores}
+Primario: Usuario.
 \subsubsection{Breve descripción}
+Para que un usuario pueda utilizar las funcionalidades que ofrece la red social \textbf{JoinMe!} tiene que registrarse, bien proporcionando sus datos reales o bien un certificado digital o DNIe.
 \subsubsection{Flujo básico}
+\begin{enumerate}
+	\item El usuario accede al enlace de la red social \textbf{JoinMe!}.
+	\item El usuario accede pulsando en el enlace de nuevo usuario.
+	\item El usuario rellena los campos del formulario introduciendo sus datos reales.
+	\item El usuario comprueba que los datos están correctos y enviar el formulario.
+	\item El usuario es redireccionado a su perfil.
+\end{enumerate}
 \subsubsection{Flujo alternativo}
+\begin{description}
+\item [3a] El usuario selecciona registrarse con DNIe u otro certificado digital.
+	\begin{enumerate}
+		\item El usuario introduce su DNIe en el lector.
+		\item El sistema accede a los datos del DNIe.
+		\item El sistema guarda los datos del usuario
+		\item El sistema solicita un email y una contraseña.
+		\item El usuario rellena el formulario y lo envía.
+		\item El sistema redirecciona al usuario a su perfil.
+	\end{enumerate}
+\end{description}
+
 \subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario no debe estar registrado en el sistema.
+\end{enumerate}
 \subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item Los datos del usuario deben quedar registrados en el sistema.
+	\item El usuario tiene que poder acceder al sistema.
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{CU03 - Aceptar solicitud de amistad}
 \subsubsection{Actores}
+Primario: Usuario.
 \subsubsection{Breve descripción}
+Los usuarios regristrados pueden aceptar las solicitudes de amistad enviadas por otros usuarios. Estas solicitudes aparecerán en un área de notificaciones.
 \subsubsection{Flujo básico}
+\begin{enumerate}
+	\item El usuario accede a su área de notificaciones.
+	\item El usuario consulta las peticiones de amistad.
+	\item El usuario hace click en el botón de aceptar solicitud de amistad.
+	\item La solicitud de amistad desaparece del área de notificaciones.
+	\item El usuario emisor de la solicitud se añade a la lista de amigos.
+	\item El sistema pregunta al usuario si quiere añadir al nuevo amigo a un círculo.
+\end{enumerate}
 \subsubsection{Flujo alternativo}
+No existe flujo alternativo.
 \subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+	\item El usuario tiene una solicitud de amistad en su bandeja de notificaciones.
+\end{enumerate}
 \subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El usuario receptor de la solicitud de amistad y el emisor se hacen amigos en la red social y pueden visitar sus perfiles sin limitaciones.
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{CU04 - Rechazar solicitud de amistad}
 \subsubsection{Actores}
+Primario: Usuario.
 \subsubsection{Breve descripción}
+Los usuarios regristrados peuden rechazar las solicitudes de amistad que consideren oportunas y que tienen disponibles en el área de notificaciones.
 \subsubsection{Flujo básico}
+\begin{enumerate}
+	\item El usuario accede a su área de notificaciones.
+	\item El usuario consulta las peticiones de amistad.
+	\item El usuario hace click en el botón de rechazar solicitud de amistad.
+	\item La solicitud de amistad desaparece del área de notificaciones.
+\end{enumerate}
 \subsubsection{Flujo alternativo}
+No existe flujo alternativo.
 \subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+	\item El usuario tiene una solicitud de amistad en su bandeja de notificaciones.
+\end{enumerate}
 \subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El usuario receptor de la solicitud de amistad y el emisor no se hacen amigos en la red social.
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{CU05 - Ver amigos}
 \subsubsection{Actores}
+Primario: Usuario.
 \subsubsection{Breve descripción}
+Un usuario registrado puede consultar los amigos accediento a la lista de los mismos. Haciendo click en el nombre de su amigo, accederá al perfil del mismo.
 \subsubsection{Flujo básico}
+\begin{enumerate}
+	\item
+\end{enumerate}
 \subsubsection{Flujo alternativo}
 \subsubsection{Precondiciones}
 \subsubsection{Postcondiciones}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+
 
 \subsection{CU06 - Enviar solicitud de amistad}
 \subsubsection{Actores}
+Primario: Usuario.
 \subsubsection{Breve descripción}
+ Accediendo al perfil de un usuario después de haberlo buscado mediante el buscador, o bien por acceso directo mediante un link, el visitante puede enviar una petición de amistad haciendo click en el botón oportuno.
 \subsubsection{Flujo básico}
+\begin{enumerate}
+	\item
+\end{enumerate}
 \subsubsection{Flujo alternativo}
 \subsubsection{Precondiciones}
 \subsubsection{Postcondiciones}
@@ -246,8 +318,13 @@ o el DNIe. Pero siempre necesario un email y contraseña.
 
 \subsection{CU11 - Crear entrada}
 \subsubsection{Actores}
+Primario: Usuario.
 \subsubsection{Breve descripción}
+Los usuarios registrados pueden crear una entrada que se verá reflejada en su muro. Esta entrada puede incluir fotografías, enlaces, videos y texto, apareciendo cada uno de ellos de una manera concreta, por ejemplo, el enlace incluíra una pequeña previsualización de texto e imágenes en el caso de que las contenta. Las imágenes tendrá una previsualización al igual que los vídeos.
 \subsubsection{Flujo básico}
+\begin{enumerate}
+	\item
+\end{enumerate}
 \subsubsection{Flujo alternativo}
 \subsubsection{Precondiciones}
 \subsubsection{Postcondiciones}
