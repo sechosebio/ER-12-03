@@ -11,6 +11,7 @@
 
 \usepackage{graphicx} % Soporte aumentado para gráficos 
 \usepackage{hyperref} % Para manejar referencias cruzadas. P.ej. añadir hiperenlaces al índice
+\usepackage{rotating}
 
 \begin{document}
 
@@ -32,7 +33,7 @@
 \begin{flushright}
 	\LARGE{\textbf{ JoinMe!}}\\
 	\LARGE{\textbf{Especificación de casos de uso}}\\
-	\large{\textbf{Version 1.0}}
+	\large{\textbf{Version 1.3}}
 	
 		
 \end{flushright}
@@ -410,6 +411,209 @@ No existe flujo alternativo.
 \subsection{\large Matriz de trazabilidad Características-Casos de uso}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  
+\begin{center}
+
+\begin{tabular}{|p{3cm}|c|c|c|c|c|c|c|c|c|}
+\hline 
+\textbf{Característica} & CU1 & CU2  & CU3 & CU4 & CU5 & CU6 & CU7 & CU8 & CU9 \\ 
+\hline 
+Login y registro de Usuarios& X & X  &   &   &   &   &   &   &   \\ 
+\hline 
+Gestión de Amigos &   &    &  X &  X  &   &   &   &   &  X \\ 
+\hline 
+Grafo de Amigos&   &    &   &   &   & X  &   &   &   \\ 
+\hline 
+Gestión de círculos&   &    &   &   &   &   &  X & X  &  X \\ 
+\hline 
+Muro&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Entradas&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Grupos &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Fotografías &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Comentarios &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Chat&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Página de Inicio &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Filtros &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Ficheros &   &    &   &   &   &   &   &   &   \\  
+\hline 
+Monedas &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Publicidad &   &    &   &   &   &   &   &   &   \\ 
+\hline  
+\end{tabular} 
+\end{center}
+
+\begin{center}
+
+\begin{tabular}{|p{3cm}|c|c|c|c|c|c|c|c|c|}
+\hline 
+\textbf{Característica} & CU10 & CU11  & CU12 & CU13 & CU14 & CU15 & CU16 & CU17 & CU18 \\ 
+\hline 
+Login y registro de Usuarios&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Gestión de Amigos & X  &    &   &   &   &   &   &   &   \\ 
+\hline 
+Grafo de Amigos&   &  X  &   &   &   &   &   &   &   \\ 
+\hline 
+Gestión de círculos&  X &    &   &   &   &   &   &   &   \\ 
+\hline 
+Muro&   &    & X  &   & X  & X  &   &   &   \\ 
+\hline 
+Entradas&   &    & X  &  X & X  & X  & X  &   &   \\ 
+\hline 
+Grupos &   &    &   &   &   &   & X  & X  & X  \\ 
+\hline 
+Fotografías &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Comentarios &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Chat&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Página de Inicio &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Filtros &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Ficheros &   &    &   &   &   &   &   &   &   \\  
+\hline 
+Monedas &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Publicidad &   &    &   &   &   &   &   &   &   \\ 
+\hline  
+\end{tabular} 
+
+
+
+\end{center}
+
+
+
+\begin{center}
+
+\begin{tabular}{|p{3cm}|c|c|c|c|c|c|c|c|c|}
+\hline 
+\textbf{Característica} & CU19 & CU20  & CU21 & CU22 & CU23 & CU24 & CU25 & CU26 & CU27 \\ 
+\hline 
+Login y registro de Usuarios&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Gestión de Amigos &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Grafo de Amigos&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Gestión de círculos&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Muro&   &    &   &   &   & X  &   &   & X  \\ 
+\hline 
+Entradas&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Grupos & X   & X   & X  &   &   &   &   &   &   \\ 
+\hline 
+Fotografías &   &    &   &  X & X  & X  & X  & X  & X  \\ 
+\hline 
+Comentarios &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Chat&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Página de Inicio &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Filtros &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Ficheros &   &    &   &   &   &   &   &   &   \\  
+\hline 
+Monedas &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Publicidad &   &    &   &   &   &   &   &   &   \\ 
+\hline  
+\end{tabular} 
+\end{center}
+
+\begin{center}
+
+\begin{tabular}{|p{3cm}|c|c|c|c|c|c|c|c|c|}
+\hline 
+\textbf{Característica} & CU28 & CU29  & CU30 & CU31 & CU32 & CU33 & CU34 & CU35 & CU36 \\ 
+\hline 
+Login y registro de Usuarios&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Gestión de Amigos &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Grafo de Amigos&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Gestión de círculos&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Muro&   &    & X  &   &   &   &   &   &   \\ 
+\hline 
+Entradas&   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Grupos &    &    &  &   &   &   &   &   &   \\ 
+\hline 
+Fotografías & X  &   X & X  &  X &   &   &   &   &   \\ 
+\hline 
+Comentarios &   &    &   &   &  X & X  &   &   &   \\ 
+\hline 
+Chat&   &    &   &   &   &   & X  &   &   \\ 
+\hline 
+Página de Inicio &   &    &   &   &   &   &   & X  & X  \\ 
+\hline 
+Filtros &   &    &   &   &   &   &   &   &  X \\ 
+\hline 
+Ficheros &   &    &   &   &   &   &   &   &   \\  
+\hline 
+Monedas &   &    &   &   &   &   &   &   &   \\ 
+\hline 
+Publicidad &   &    &   &   &   &   &   &   &   \\ 
+\hline  
+\end{tabular} 
+\end{center}
+
+
+\begin{center}
+
+\begin{tabular}{|p{3cm}|c|c|c|c|c|c|c|c|c|}
+\hline 
+\textbf{Característica} & CU37 & CU38  & CU39 & CU40 & CU41 & CU42 & CU43 & CU44 \\ 
+\hline 
+Login y registro de Usuarios&   &    &   &   &   &   &   &     \\ 
+\hline 
+Gestión de Amigos &   &    &   &   &   &   &   &     \\ 
+\hline 
+Grafo de Amigos&   &    &   &   &   &   &   &     \\ 
+\hline 
+Gestión de círculos&   &    &   &   &   &   &   &      \\ 
+\hline 
+Muro&   &    &   &   &   &   &   &      \\ 
+\hline 
+Entradas&   &    &   &   &   &   &   &     \\ 
+\hline 
+Grupos & X   & X   & X  &   &   &   &   &     \\ 
+\hline 
+Fotografías &   &    &   &   &   &  &   &     \\ 
+\hline 
+Comentarios &   &    &   &   &   &   &   &    \\ 
+\hline 
+Chat&   &    &   &   &   &   &   &      \\ 
+\hline 
+Página de Inicio &   &    &   &   &   &   &   &     \\ 
+\hline 
+Filtros &   &    &   &   &   &   &   &     \\ 
+\hline 
+Ficheros &  X & X   &   &   &   &   &   &      \\  
+\hline 
+Monedas &   &    & X  &  X &  X & X  &   &      \\ 
+\hline 
+Publicidad &   &    &   &   &   &   & X  &  X   \\ 
+\hline  
+\end{tabular} 
+\end{center}
+
+
+
+
 %**********************************************************
 \end{document}
