@@ -98,7 +98,7 @@ o el DNIe. Pero siempre necesario un email y contraseña.
     
     \item [CU04 - Rechazar solicitud de amistad]: Los usuarios regristrados pueden rechazar las solicitudes de amistad que consideren oportunas y que tienen disponibles en el área de notificaciones.
     
-    \item [CU05 - Ver amigos]: Un usuario registrado puede consultar los amigos accediento a la lista de los mismos. Haciendo click en el nombre de su amigo, accederá al perfil del mismo.
+    \item [CU05 - Ver amigos]: Un usuario registrado puede consultar los amigos accediento a la lista de los mismos. Haciendo click en el nombre de usuario, accederá al perfil del mismo.
     
     \item [CU06 - Enviar solicitud de amistad]: Accediendo al perfil de un usuario después de haberlo buscado mediante el buscador, o bien por acceso directo mediante un link, el visitante puede enviar una petición de amistad haciendo click en el botón oportuno.
     
@@ -134,7 +134,7 @@ o el DNIe. Pero siempre necesario un email y contraseña.
 	
 	\item [CU21 - Responder en un hilo del grupo]: Todo hilo del foro de discusión de un grupo puede tener respuestas mientras este siga abierto, para que el usuario puede crear una respuesta tiene que hacer uso del botón correspondiente de \textbf{Responder} y cubrir el formulario.
 	
-	\item [CU22 - Crear álbm de fotografías]: Los usuarios registrados pueden crear álbumes para tener organizadas sus fotografías, para ello desde su perfil tendrán un botón que les dará acceso a un formulario con título del álmbum y una descripción voluntaria, así como más datos de información.
+	\item [CU22 - Crear álbum de fotografías]: Los usuarios registrados pueden crear álbumes para tener organizadas sus fotografías, para ello desde su perfil tendrán un botón que les dará acceso a un formulario con título del álmbum y una descripción voluntaria, así como más datos de información.
 	
 	\item [CU23 - Subir fotografía]:  Los usuarios registrados pueden subir una fotografía y asignarla a uno de sus álbumes creados o no. 
 	
@@ -289,14 +289,29 @@ No existe flujo alternativo.
 \subsubsection{Actores}
 Primario: Usuario.
 \subsubsection{Breve descripción}
-Un usuario registrado puede consultar los amigos accediento a la lista de los mismos. Haciendo click en el nombre de su amigo, accederá al perfil del mismo.
+Un usuario registrado puede consultar los amigos accediento a la lista de los mismos. Haciendo click en el nombre de usuario, accederá al perfil del mismo.
 \subsubsection{Flujo básico}
 \begin{enumerate}
-	\item
+	\item El usuario accede a su listado de amigos.
+	\item El sistema muestra la lista completa de sus amigos.
+	\item El usuario puede acceder al perfil de cualquiera de sus amigos pinchando en su nombre.
 \end{enumerate}
 \subsubsection{Flujo alternativo}
+\begin{enumerate}
+	\item El usuario accede a un perfil de usuario.
+	\item El usuario hace click en el enlace de amigos en el perfil.
+	\item El sistema muestra la lista de amigos del usuario cuyo perfil se está visitando.
+	\item Opcionalmente, el usuario puede escoger que la lista se muestre en forma de grafo, para comprobar el grado de separación entre ambos.
+	\item El usuario puede visitar los perfiles de la lista o el grafo a través del enlace en su nombre.
+\end{enumerate}
 \subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+\end{enumerate}
 \subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El sistema muestra la lista de amigos.
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -308,12 +323,26 @@ Primario: Usuario.
  Accediendo al perfil de un usuario después de haberlo buscado mediante el buscador, o bien por acceso directo mediante un link, el visitante puede enviar una petición de amistad haciendo click en el botón oportuno.
 \subsubsection{Flujo básico}
 \begin{enumerate}
-	\item
+	\item El usuario accede al perfil de otro usuario.
+	\item El usuario pulsa el boton de solicitud de amistad.
+	\item El usuario será notificado si su solicitud es aceptada por el otro usuario.
 \end{enumerate}
 \subsubsection{Flujo alternativo}
+\begin{enumerate}
+	\item El usuario accede a la lista de amigos de otro usuario.
+	\item El usuario pulsa el boton de solicitud de amistad sin acceder a su perfil.
+	\item El usuario será notificado si su solicitud es aceptada por el otro usuario.
+\end{enumerate}
 \subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+	\item El usuario no es amigo del destinatario de la solicitud.
+\end{enumerate}
 \subsubsection{Postcondiciones}
-
+\begin{enumerate}
+	\item Se le notifica al destinatario la solicitud.
+	\item Se agrega a las peticiones de amistad del destinatario.
+\end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{CU11 - Crear entrada}
@@ -323,11 +352,26 @@ Primario: Usuario.
 Los usuarios registrados pueden crear una entrada que se verá reflejada en su muro. Esta entrada puede incluir fotografías, enlaces, videos y texto, apareciendo cada uno de ellos de una manera concreta, por ejemplo, el enlace incluíra una pequeña previsualización de texto e imágenes en el caso de que las contenta. Las imágenes tendrá una previsualización al igual que los vídeos.
 \subsubsection{Flujo básico}
 \begin{enumerate}
-	\item
+	\item El usuario accede a su página de inicio o a su muro.
+	\item El usuario puede añadir o quitar texto en el formulario de creación de una entrada.
+	\item El usuario puede añadir o quitar fotografías.
+	\item El usuario puede añadir o quitar enlaces.
+	\item El usuario puede añadir o quitar vídeos.
+	\item El usuario previsualiza el aspecto final de la entrada mientras la edita, y puede repetir cualquiera de los 4 pasos anteriores.
+	\item El usuario selecciona el grado de privacidad de la entrada, con quién desea compartirla.
+	\item El usuario pulsa el botón correspondiente para publicar la entrada.
+	\item El sistema almacena la entrada y la añade al muro del usuario, mostrándola de acuerdo al tipo de su contenido.
 \end{enumerate}
 \subsubsection{Flujo alternativo}
+No existe flujo alternativo.
 \subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+\end{enumerate}
 \subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item La entrada queda almacenada y agregada al muro del usuario.
+\end{enumerate}
 
 
 
