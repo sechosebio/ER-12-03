@@ -5,3 +5,6 @@ Team members:
 * [José Antonio López Sebio] (https://github.com/sechosebio) @sechosebio  
 * [Pablo Paz Varela] (https://github.com/pablopaz) @pablopaz
 
+
+####06/03/2015
+- The first project is in the folder [1-Requisitos](https://github.com/sechosebio/ER-12-03/tree/master/1-Requisitos) and the Tag is  [Practica_1](https://github.com/sechosebio/ER-12-03/tree/Practica_1/1-Requisitos) 
