@@ -522,8 +522,47 @@ el problema.
 \section{Precedencia y prioridad}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Las características las vamos a clasificar con Prioridad A,B o C respectivamente, siendo A la prioridad más alta, y C la más baja.
+Las características son clasificadas según las prioridades A,B y C, siendo A la más importante y C la más baja.
 
+\begin{center}
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Característica & Predecesora & Prioridad \\ 
+\hline 
+Login y registro de Usuarios & - & A \\ 
+\hline 
+Gestión de Amigos & Login y registro de Usuario & B \\ 
+\hline 
+Grafo de Amigos & Login y registro de Usuarios, Gestión de Amigos & C \\ 
+\hline 
+Gestión de círculos & Login y registro de Usuarios & B\\ 
+\hline 
+Muro & Login y registro de Usuarios, Entradas & A \\ 
+\hline 
+Entradas & Login y registro de Usuarios & A \\ 
+\hline 
+Grupos & Login y registro de Usuarios & B \\ 
+\hline 
+Fotografías & Login y registro de Usuarios & A \\ 
+\hline 
+Comentarios & Login y registro de Usuarios, Entradas, Muro & A \\ 
+\hline 
+Chat & Login y registro de Usuarios, Gestión de Amigos & B \\ 
+\hline 
+Página de Inicio & Login y registro de Usuarios & A \\ 
+\hline 
+Filtros & Login y registro de Usuarios, Página de Inicio & C \\ 
+\hline 
+Ficheros & Login y registro de Usuarios & C \\ 
+\hline 
+Monedas & Login y registro de Usuarios & C \\ 
+\hline 
+Publicidad & Login y registro de Usuarios & C \\ 
+\hline 
+\end{tabular} 
+
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Otros requisitos del producto}
