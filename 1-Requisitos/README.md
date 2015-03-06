@@ -12,4 +12,4 @@ First delivery's documentation:
 * [Use Case Specification] (https://github.com/sechosebio/ER-12-03/blob/master/1-Requisitos/Casos%20de%20Uso.pdf)
 
 ###Tag 
-- [Requisitos_1](https://github.com/sechosebio/ER-12-03/tree/master/1-Requisitos)
+- [Practica_1](https://github.com/sechosebio/ER-12-03/tree/Practica_1/1-Requisitos)
