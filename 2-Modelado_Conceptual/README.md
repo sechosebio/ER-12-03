@@ -6,8 +6,8 @@ Team members:
 * [Pablo Paz Varela] (https://github.com/pablopaz) @pablopaz
 
 Second delivery's documentation:
-* Modelo del dominio
-* Diagrama de secuencia del sistema (DSS)
+* [Modelo del dominio](https://github.com/sechosebio/ER-12-03/blob/master/2-Modelado_Conceptual/Modelo_del_dominio.pdf)
+* [Diagrama de secuencia del sistema (DSS)](https://github.com/sechosebio/ER-12-03/blob/master/2-Modelado_Conceptual/DSS.pdf)
 * [Use Case Specification] (https://github.com/sechosebio/ER-12-03/blob/master/1-Requisitos/Casos%20de%20Uso.pdf)
 
 ###Tag 
