@@ -82,7 +82,16 @@ muestra clases conceptuales significativas en el dominio del problema.
 
 En este apartado se describen las clases conceptuales que se extraen de los casos de uso previamente realizados.
 \subsection{Usuario}
-	Representa al usuario principal de la red social \textbf{joinMe!}, ya que es el usuario que mayor interacción tiene con las funcionalidades del sistema. Con esta descripción es obvia la necesidad de modelar al \textbf{Usuario} como una clase conceptual, ya que aparece en la mayoría de los casos de uso. Esta clase tendrá varios atributos, la mayoría de ellos dados por el propio usuario ya que serán sus datos personales.
+	Representa al usuario principal de la red social \textbf{joinMe!}, ya que es el usuario que mayor interacción tiene con las funcionalidades del sistema, tales como:
+	\begin{itemize}
+		\item Agregar amigo.
+		\item Comentar publicación.
+		\item Gestionar grupo.
+		\item Gestionar círculos.
+		\item Subir fotografías y vídeos.
+		\item etcétera.
+	\end{itemize}
+	Con esta descripción es obvia la necesidad de modelar al \textbf{Usuario} como una clase conceptual, ya que aparece en la mayoría de los casos de uso. Esta clase tendrá varios atributos, la mayoría de ellos dados por el propio usuario ya que serán sus datos personales.
 	Estos atributos son:
 	\begin{itemize}
 		\item Nombre.
@@ -93,7 +102,7 @@ En este apartado se describen las clases conceptuales que se extraen de los caso
 	\end{itemize}
 	
 \subsection{Mensaje}
-	Representa un mensaje que es enviado por un usuario a otro usuario contemplada en la funcionalidad de Chat o de mensajería. Cada mensaje tiene asociados los siguientes atributos:
+	Representa un mensaje que es enviado por un usuario a otro usuario contemplada en la funcionalidad de Chat/mensajería. Cada mensaje tiene asociados los siguientes atributos:
 	\begin{itemize}
 		\item Id.
 		\item Fecha y hora de envío.
