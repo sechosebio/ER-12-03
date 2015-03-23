@@ -84,27 +84,125 @@ Este documento proporciona el modelado dinámico de la red social \textbf{JoinMe
 \section{Diagramas de secuencia del sistema DSS }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Caso de uso 1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{CU01 - Registrar usuario}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Precondiciones}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
+	\item El usuario no debe estar registrado en el sistema.
+\end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Diagrama de Secuencia}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+	\includegraphics[width=\textwidth]{Imagenes/registrarUsuario}
+\end{center}
 
-
-% Lista de tamaños: \Huge, \huge, \LARGE, \Large, \large, \small, \footnotesize, \tiny
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item Los datos del usuario deben quedar registrados en el sistema.
+	\item El usuario tiene que poder acceder al sistema.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU03 - Aceptar solicitud de amistad}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+	\item El usuario tiene una solicitud de amistad en su bandeja de notificaciones.
+\end{enumerate}
+
+\subsubsection{Diagrama de Secuencia}
+\begin{center}
+	\includegraphics[width=\textwidth]{Imagenes/Aceptar_solicitud_de_amistad}
+\end{center}
+
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El usuario receptor de la solicitud de amistad y el emisor se hacen amigos en la red social y pueden visitar sus perfiles sin limitaciones.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU04 - Rechazar solicitud de amistad}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+	\item El usuario tiene una solicitud de amistad en su bandeja de notificaciones.
+\end{enumerate}
+
+\subsubsection{Diagrama de Secuencia}
+\begin{center}
+	\includegraphics[width=\textwidth]{Imagenes/Rechazar_solicitud_de_amistad}
+\end{center}
+
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El usuario receptor de la solicitud de amistad y el emisor no se hacen amigos en la red social.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU05 - Ver amigos}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+\end{enumerate}
+
+\subsubsection{Diagrama de Secuencia}
+\begin{center}
+	\includegraphics[width=\textwidth]{Imagenes/Ver_amigos}
+\end{center}
+
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El sistema muestra la lista de amigos.
+\end{enumerate}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\subsection{CU06 - Enviar solicitud de amistad}
 
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+	\item El usuario no es amigo del destinatario de la solicitud.
+\end{enumerate}
+
+\subsubsection{Diagrama de Secuencia}
+\begin{center}
+	\includegraphics[width=\textwidth]{Imagenes/Enviar_solicitud_amistad}
+\end{center}
+
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item Se le notifica la solicitud al destinatario.
+	\item Se agrega a las peticiones de amistad del destinatario.
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU11 - Crear entrada}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene la sesión iniciada en la red social.
+\end{enumerate}
+
+\subsubsection{Diagrama de Secuencia}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=\textheight]{Imagenes/Crear_entrada}
+\end{figure}
+
+
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item La entrada queda almacenada y agregada al muro del usuario.
+\end{enumerate}
 
 
 
