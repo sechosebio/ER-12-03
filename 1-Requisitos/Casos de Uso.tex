@@ -33,7 +33,7 @@
 \begin{flushright}
 	\LARGE{\textbf{ JoinMe!}}\\
 	\LARGE{\textbf{Especificación de casos de uso}}\\
-	\large{\textbf{Version 1.4}}
+	\large{\textbf{Version 1.5}}
 	
 		
 \end{flushright}
@@ -56,6 +56,7 @@ Grupo ER-12-03\\
      06/03/2014 & 1.2 & Añadidos casos de uso detallados & ER-12-03  \\ \hline
      06/03/2014 & 1.3 & Añadidos diagramas & ER-12-03  \\ \hline
      06/03/2014 & 1.4 & Versión corregida & ER-12-03  \\ \hline
+     26/03/2014 & 1.5 & Añadidos más casos de uso detallados & ER-12-03 \\ \hline
     \end{tabular}
 \end{center}
 
@@ -288,13 +289,73 @@ Para que un usuario pueda utilizar las funcionalidades que ofrece la red social 
 	\item El usuario tiene que poder acceder al sistema.
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU02 - Modificación de perfil}
+\subsubsection{Actores}
+
+Primario: Usuario.
+
+\subsubsection{Breve descripción}
+Un usuario registrado puede querer modificar alguno de los datos almacenados en la red social, como puede ser su email o contraseña.
+\subsubsection{Flujo básico}
+	\begin{enumerate}
+		\item El usuario accede a la red social \textbf{JoinMe!}.
+		\item El usuario acceder a su perfil siguiendo en enlace que le redirecciona a su perfil. 
+		\item El usuario hace click en el botón de \textit{editar perfil}.
+		\item El usuario modifica los datos que quiera modificar.
+		\item El usuario pulsa el botón de \textit{Guardar cambios}.
+	\end{enumerate}
+
+\subsubsection{Flujo alternativo}
+\begin{description}
+	\item [1a] El usuario ya tiene la sesión iniciada en la red social \textbf{JoinMe!}.
+		\begin{enumerate}
+			\item Mismos pasos que en el flujo básico.
+		\end{enumerate}
+\end{description}
+
+\begin{description}
+\item [*a] El sistema falla:
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo al usuario.
+		\item El sistema registra el fallo en un log.
+		\item El sistema cancela las acciones en caso necesario.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*b] El usuario cancela la operación:
+	\begin{enumerate}
+		\item El sistema aborta la operación.
+		\item El sistema redirige a la página de inicio.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*c] El usuario introduce contraseña errónea en el campo de confirmar contraseña.
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo que cometió.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene un perfil creado en la red social \textbf{JoinMe!}.
+\end{enumerate}
+\subsubsection{Postcondiciones}
+	\begin{enumerate}
+		\item El perfil del usuario es actualizado y se pueden visualizar los cambios realizados.
+	\end{enumerate}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{CU03 - Aceptar solicitud de amistad}
 \subsubsection{Actores}
 Primario: Usuario.
 \subsubsection{Breve descripción}
-Los usuarios regristrados pueden aceptar las solicitudes de amistad enviadas por otros usuarios. Estas solicitudes aparecerán en un área de notificaciones.
+Los usuarios registrados pueden aceptar las solicitudes de amistad enviadas por otros usuarios. Estas solicitudes aparecerán en un área de notificaciones.
 \subsubsection{Flujo básico}
 \begin{enumerate}
 	\item El usuario accede a su área de notificaciones.
@@ -330,7 +391,7 @@ Los usuarios regristrados pueden aceptar las solicitudes de amistad enviadas por
 \subsubsection{Actores}
 Primario: Usuario.
 \subsubsection{Breve descripción}
-Los usuarios regristrados peuden rechazar las solicitudes de amistad que consideren oportunas y que tienen disponibles en el área de notificaciones.
+Los usuarios regristrados pueden rechazar las solicitudes de amistad que consideren oportunas y que tienen disponibles en el área de notificaciones.
 \subsubsection{Flujo básico}
 \begin{enumerate}
 	\item El usuario accede a su área de notificaciones.
@@ -445,13 +506,115 @@ Primario: Usuario.
 	\item Se le notifica la solicitud al destinatario.
 	\item Se agrega a las peticiones de amistad del destinatario.
 \end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU07 - Crear círculo}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+Un usuario registrado quiere crear un círculo para tener organizados a sus contactos/amigos de una manera más lógica y así también facilitar la selección del grado de privacidad de sus publicaciones.
+\subsubsection{Flujo básico}
+	\begin{enumerate}
+		\item El usuario selecciona el botón \textit{Crear círculo}
+		\item El usuario completa los campos relativos al nombre del círculo y la descripción.
+		\item El usuario selecciona el contacto o los contactos desde un desplegable que muestra su lista de amigos, a los contactos que quiere añadir al círculo.
+		\item El usuario acepta la creación del círculo haciendo click en el botón de \textit{Aceptar}.
+	\end{enumerate}
+\subsubsection{Flujo alternativo}
+	\begin{description}
+		\item [1a] El usuario accede al perfil de un amigo al que quiere añadir a un círculo nuevo:
+			\begin{enumerate}
+				\item El usuario pulsa en el botón \textit{Añadir amigo a círculo}.
+				\item El usuario en el modal que se abre, selecciona \textit{crear nuevo círculo}.
+				\item El usuario completa los campos relativos a nombre y descripción del círculo.
+				\item El usuario acepta la creación del círculo.
+			\end{enumerate}
+	\end{description}
+	
+	\begin{description}
+		\item [*a] El sistema falla:
+		\begin{enumerate}
+			\item El sistema muestra un mensaje para informar del fallo al usuario.
+			\item El sistema registra el fallo en un log.
+			\item El sistema cancela las acciones en caso necesario.
+		\end{enumerate}
+	\end{description}
+
+	\begin{description}
+		\item [*b] El usuario cancela la operación:
+		\begin{enumerate}
+			\item El sistema aborta la operación.
+			\item El sistema redirige a la página de inicio.
+		\end{enumerate}
+	\end{description}
+
+
+	
+\subsubsection{Precondiciones}
+	\begin{enumerate}
+		\item El usuario tiene la sesión iniciada en la red social \textbf{JoinMe!}.
+		\item El usuario tiene algún contacto en la red social.
+	\end{enumerate}
+\subsubsection{Postcondiciones}
+	\begin{enumerate}
+		\item El usuario tiene el círculo creado con al menos un contacto dentro de él.
+	\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU09 - Añadir amigo a círculo}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+El usuario registrado en la red social \textbf{JoinMe!}  puede añadir amigos a los círculos que ya tenga creados para organizar mejor sus contactos.
+\subsubsection{Flujo básico}
+	\begin{enumerate}
+		\item El usuario accede al perfil de su contacto.
+		\item El usuario hace click en el botón \textit{Añadir a círculo}.
+		\item El usuario selecciona de un desplegable en el modal que se abre el círculo donde quiere añadir a su contacto.
+		\item El usuario hace click en el botón de \textit{Aceptar}.
+	\end{enumerate}
+	
+\subsubsection{Flujo alternativo}
+
+	\begin{description}
+	\item [*a] El sistema falla:
+		\begin{enumerate}
+			\item El sistema muestra un mensaje para informar del fallo al usuario.
+			\item El sistema registra el fallo en un log.
+			\item El sistema cancela las acciones en caso necesario.
+		\end{enumerate}
+	\end{description}
+
+	\begin{description}
+		\item [*b] El usuario cancela la operación:
+		\begin{enumerate}
+			\item El sistema aborta la operación.
+			\item El sistema redirige a la página de inicio.
+		\end{enumerate}
+	\end{description}
+
+\subsubsection{Precondiciones}
+	\begin{enumerate}
+		\item El usuario tiene un perfil creado en la red social \textbf{JoinMe!}.
+		\item El usuario tiene al menos un amigo al que agregar a un círculo.
+	\end{enumerate}
+
+\subsubsection{Postcondiciones}
+	\begin{enumerate}
+		\item El usuario tiene a su amigo en el círculo que seleccionó.
+	\end{enumerate}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{CU11 - Crear entrada}
 \subsubsection{Actores}
 Primario: Usuario.
 \subsubsection{Breve descripción}
-Los usuarios registrados pueden crear una entrada que se verá reflejada en su muro. Esta entrada puede incluir fotografías, enlaces, videos y texto, apareciendo cada uno de ellos de una manera concreta, por ejemplo, el enlace incluíra una pequeña previsualización de texto e imágenes en el caso de que las contenta. Las imágenes tendrá una previsualización al igual que los vídeos.
+Los usuarios registrados pueden crear una entrada que se verá reflejada en su muro. Esta entrada puede incluir fotografías, enlaces, videos y texto, apareciendo cada uno de ellos de una manera concreta, por ejemplo, el enlace incluirá una pequeña previsualización de texto e imágenes en el caso de que las contenta. Las imágenes tendrá una previsualización al igual que los vídeos.
 \subsubsection{Flujo básico}
 \begin{enumerate}
 	\item El usuario accede a su página de inicio o a su muro.
@@ -492,7 +655,134 @@ Los usuarios registrados pueden crear una entrada que se verá reflejada en su m
 	\item La entrada queda almacenada y agregada al muro del usuario.
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{CU016 - Crear grupo}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+Los usuarios registrados pueden crear un grupo para unir a personas afines al interés del grupo, para ello tienen que cubrir un formulario.
+\subsubsection{Flujo básico}
+
+	\begin{enumerate}
+		\item El usuario hace click en el botón \textit{Crear grupo}.
+		\item El usuario completa los campos necesarios en el formulario de creación de un grupo.
+		\item El usuario acepta la creación del grupo.
+		\item El usuario puede seleccionar contactos a los que invitar al grupo recién creado.
+	\end{enumerate}
+
+\subsubsection{Flujo alternativo}
+	\begin{description}
+		\item [*a] El sistema falla:
+			\begin{enumerate}
+				\item El sistema muestra un mensaje para informar del fallo al usuario.
+				\item El sistema registra el fallo en un log.
+				\item El sistema cancela las acciones en caso necesario.
+			\end{enumerate}
+	\end{description}
+
+	\begin{description}
+		\item [*b] El usuario cancela la operación:
+			\begin{enumerate}
+				\item El sistema aborta la operación.
+				\item El sistema redirige a la página de inicio.
+			\end{enumerate}
+	\end{description}
+\subsubsection{Precondiciones}
+	\begin{enumerate}
+		\item El usuario está registrado en la red social \textbf{JoinMe!}.
+	\end{enumerate}
+\subsubsection{Postcondiciones}
+	\begin{enumerate}
+		\item El grupo existe en el sistema.
+		\item El usuario que creó el grupo es miembro del mismo.
+		\item El usuario que creó el grupo es el administrador del grupo.
+	\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU017 - Eliminar grupo}
+\subsubsection{Actores}
+Primario: Usuario.
+
+\subsubsection{Breve descripción}
+Un usuario administrador de un grupo puede eliminar un grupo siempre que lo desee.
+\subsubsection{Flujo básico}
+	\begin{enumerate}
+		\item El usuario accede al grupo que quiere eliminar.
+		\item El usuario hace click en el botón eliminar grupo.
+		\item El usuario tiene que confirmar la opción de eliminar el grupo por razones de seguridad haciendo click en un botón de confirmación.
+		\item El usuario recibe un mensaje conforme el grupo fue eliminado y es redirigido a la página principal. 
+	\end{enumerate}
+	
+\subsubsection{Flujo alternativo}
+	\begin{description}
+		\item [*a] El sistema falla:
+			\begin{enumerate}
+				\item El sistema muestra un mensaje para informar del fallo al usuario.
+				\item El sistema registra el fallo en un log.
+				\item El sistema cancela las acciones en caso necesario.
+			\end{enumerate}
+	\end{description}
+
+	\begin{description}
+		\item [*b] El usuario cancela la operación:
+			\begin{enumerate}
+				\item El sistema aborta la operación.
+				\item El sistema redirige a la página de inicio.
+			\end{enumerate}
+	\end{description}
+\subsubsection{Precondiciones}
+	\begin{enumerate}
+		\item El usuario que inicia el proceso de eliminar un grupo, es el administrador del mismo.
+	\end{enumerate}
+\subsubsection{Postcondiciones}
+	\begin{enumerate}
+		\item El grupo desaparece del sistema.
+	\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU018 - Ingresar en grupo}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+ Un usuario registrado puede acceder a un grupo. Un grupo es un perfil  que agrupa a un conjunto de usuarios que se reúnen en la red social con un fin común, que pueden ser, por ejemplo: gustos, intereses o organización de un evento.
+
+\subsubsection{Flujo básico}
+	\begin{enumerate}
+		\item El usuario busca el grupo ingresando el nombre del grupo en el formulario de búsqueda.
+		\item El usuario accede al perfil del grupo.
+		\item El usuario hace click en el botón de \textit{Ingresar en el grupo}.
+	\end{enumerate}
+\subsubsection{Flujo alternativo}
+
+	\begin{description}
+		\item [*a] El sistema falla:
+			\begin{enumerate}
+				\item El sistema muestra un mensaje para informar del fallo al usuario.
+				\item El sistema registra el fallo en un log.
+				\item El sistema cancela las acciones en caso necesario.
+			\end{enumerate}
+	\end{description}
+
+	\begin{description}
+		\item [*b] El usuario cancela la operación:
+			\begin{enumerate}
+				\item El sistema aborta la operación.
+				\item El sistema redirige a la página de inicio.
+			\end{enumerate}
+	\end{description}
+	
+\subsubsection{Precondiciones}
+	\begin{enumerate}
+		\item El usuario tiene un perfil creado en la red social \textbf{JoinMe!}.
+		\item El grupo al que quiere ingresar existe.
+	\end{enumerate}
+\subsubsection{Postcondiciones}
+	\begin{enumerate}
+		\item El usuario pertenece al grupo en el que ingresó.
+	\end{enumerate}
 
 %----------------------------------------
 \section{Matrices de trazabilidad}  
