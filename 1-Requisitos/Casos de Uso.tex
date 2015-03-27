@@ -962,6 +962,136 @@ Las publicaciones pueden ser comentadas, bien por el usuario autor de la publica
 	\item El comentario queda registrado en la publicación.
 \end{enumerate}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{CU36 - Filtrar en página de inicio}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+La página de inicio tiene una serie de filtros donde los usuarios podrán filtrar la información que quieren ver por categoría. Para usar los filtros los usuarios tienen que seleccionar que categorías quieren ver.
+
+\subsubsection{Flujo básico}
+	\begin{itemize}
+		\item El usuario pulsa en filtros y se abre un desplegable.
+		\item El usuario selecciona los filtros que quiere aplicar.
+		\item El usuario pulsa el botón \textit{filtrar}
+	\end{itemize}
+\subsubsection{Flujo alternativo}
+
+	\begin{description}
+	\item [*a] El sistema falla:
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo al usuario.
+		\item El sistema registra el fallo en un log.
+		\item El sistema cancela las acciones en caso necesario.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*b] El usuario cancela la operación:
+	\begin{enumerate}
+		\item El sistema aborta la operación.
+		\item El sistema redirige a la página de inicio.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Precondiciones}
+	\begin{itemize}
+		\item El usuario está registrado y logueado en el sistema.
+		\item El usuario tiene contactos o grupos para que tenga información para filtrar en su muro.
+	\end{itemize}
+\subsubsection{Postcondiciones}
+	\begin{itemize}
+		\item En el muro sólo aparecen noticias que cumplen las condiciones del filtro.
+	\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{CU37 - Subir ficheros}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+
+Los usuarios tendrán disponible un formulario para subir ficheros a la red social.
+\subsubsection{Flujo básico}
+	\begin{itemize}
+		\item El usuario accede a su perfil
+		\item El usuario accede a su área de ficheros haciendo click en el botón correspondiente.
+		\item El usuario puede arrastrar los ficheros a un área específica o pulsar en el botón de \textit{Examinar}, para seleccionar los archivos.
+		\item El usuario acepta la subida de ese fichero.
+	\end{itemize}
+
+\subsubsection{Flujo alternativo}
+	\begin{description}
+	\item [*a] El sistema falla:
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo al usuario.
+		\item El sistema registra el fallo en un log.
+		\item El sistema cancela las acciones en caso necesario.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*b] El usuario cancela la operación:
+	\begin{enumerate}
+		\item El sistema aborta la operación.
+		\item El sistema redirige a la página de inicio.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Precondiciones}
+	\begin{itemize}
+		\item El usuario está registrado y loguedo en la red social.
+		\item El usuario tiene espacio suficiente como para subir ficheros.
+	\end{itemize}
+
+\subsubsection{Postcondiciones}
+	\begin{itemize}
+		\item El fichero está almacenado en el sistema.
+		\item El fichero aparece en el área personal del usuario.
+	\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{CU38 - Borrar ficheros}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+Los usuarios tendrán disponibles una página de gestión de ficheros subidos, donde podrán eliminar los subidos.
+\subsubsection{Flujo básico}
+	\begin{itemize}
+		\item El usuario accede a su perfil.
+		\item El usuario accede a su área personal de ficheros.
+		\item El usuario selecciona el fichero o los ficheros a borrar.
+		\item El usuario hace click en el botón correspondiente de \textit{Borrar} para borrar los archivos.
+	\end{itemize}
+\subsubsection{Flujo alternativo}
+	\begin{description}
+	\item [*a] El sistema falla:
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo al usuario.
+		\item El sistema registra el fallo en un log.
+		\item El sistema cancela las acciones en caso necesario.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*b] El usuario cancela la operación:
+	\begin{enumerate}
+		\item El sistema aborta la operación.
+		\item El sistema redirige a la página de inicio.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Precondiciones}
+\begin{itemize}
+		\item El usuario está registrado y loguedo en la red social.
+		
+	\end{itemize}
+
+
+\subsubsection{Postcondiciones}
+	\begin{itemize}
+		\item El fichero desaparece del área personal del usuario.
+	\end{itemize}
 %----------------------------------------
 \section{Matrices de trazabilidad}  
 %----------------------------------------
