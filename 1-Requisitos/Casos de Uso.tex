@@ -298,7 +298,8 @@ Primario: Usuario.
 
 \subsubsection{Breve descripción}
 Un usuario registrado puede querer modificar alguno de los datos almacenados en la red social, como puede ser su email o contraseña.
-\subsubsection{Flujo básico}
+
+\subsubsection{Flujo básico}
 	\begin{enumerate}
 		\item El usuario accede a la red social \textbf{JoinMe!}.
 		\item El usuario acceder a su perfil siguiendo en enlace que le redirecciona a su perfil. 
@@ -783,6 +784,183 @@ Primario: Usuario.
 	\begin{enumerate}
 		\item El usuario pertenece al grupo en el que ingresó.
 	\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU21 - Crear hilo en un foro de discusión de grupo}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+Los grupos disponen de un foro de discusión, donde los miembros podrán crear un hilo de discusión al hacer click en el botón correspondiente y rellenando el formulario con título, y una caja de texto donde intrudirá el texto de la discusión.
+
+\subsubsection{Flujo básico}
+\begin{enumerate}
+	\item El usuario accede a la página del grupo.
+	\item El usuario accede a la sección correspondiente al foro.
+	\item El usuario hace click en el botón de \textit{Crear Hilo}.
+	\item El usuario escribe el título del hilo y el contenido en el formulario y lo envía.
+\end{enumerate}
+\subsubsection{Flujo alternativo}
+
+\begin{description}
+	\item [*a] El sistema falla:
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo al usuario.
+		\item El sistema registra el fallo en un log.
+		\item El sistema cancela las acciones en caso necesario.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*b] El usuario cancela la operación:
+	\begin{enumerate}
+		\item El sistema aborta la operación.
+		\item El sistema redirige a la página de inicio.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene un perfil creado en la red social \textbf{JoinMe!}.
+	\item El usuario pertenece al grupo en cuyo foro crea el hilo.
+\end{enumerate}
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El hilo queda almacenado y puede ser visto y respondido por el resto de miembros del grupo.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU22 - Responder en un hilo del grupo}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+Todo hilo del foro de discusión de un grupo puede tener respuestas mientras este siga abierto, para que el usuario puede crear una respuesta tiene que hacer uso del botón correspondiente de \textbf{Responder} y cubrir el formulario.
+
+\subsubsection{Flujo básico}
+\begin{enumerate}
+	\item El usuario accede a la página del grupo.
+	\item El usuario accede a la sección correspondiente al foro.
+	\item El usuario accede al hilo en cuestión.
+	\item El usuario hace click en el botón de \textit{Responder}.
+	\item El usuario escribe el contenido de su respuesta en el formulario y lo envía.
+\end{enumerate}
+\subsubsection{Flujo alternativo}
+
+\begin{description}
+	\item [*a] El sistema falla:
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo al usuario.
+		\item El sistema registra el fallo en un log.
+		\item El sistema cancela las acciones en caso necesario.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*b] El usuario cancela la operación:
+	\begin{enumerate}
+		\item El sistema aborta la operación.
+		\item El sistema redirige a la página de inicio.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene un perfil creado en la red social \textbf{JoinMe!}.
+	\item El usuario pertenece al grupo en cuyo foro va a responder.
+\end{enumerate}
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item La respuesta queda almacenada y añadida al hilo.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU23 - Crear álbum de fotografías}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+Los usuarios registrados pueden crear álbumes para tener organizadas sus fotografías, para ello desde su perfil tendrán un botón que les dará acceso a un formulario con título del álmbum y una descripción voluntaria, así como más datos de información.
+
+\subsubsection{Flujo básico}
+\begin{enumerate}
+	\item El usuario accede a la página de su perfil.
+	\item El usuario accede a su sección de fotografías.
+	\item El usuario hace click en el botón de \textit{Crear álbum}.
+	\item El usuario escribe el título del álbum en el formulario.
+	\item Opcionalmente, el usuario puede añadir una descripción y otros datos como una localización geográfica.
+	\item El usuario confirma los datos introducidos y envía el formulario.
+\end{enumerate}
+\subsubsection{Flujo alternativo}
+
+\begin{description}
+	\item [*a] El sistema falla:
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo al usuario.
+		\item El sistema registra el fallo en un log.
+		\item El sistema cancela las acciones en caso necesario.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*b] El usuario cancela la operación:
+	\begin{enumerate}
+		\item El sistema aborta la operación.
+		\item El sistema redirige a la página de inicio.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene un perfil creado en la red social \textbf{JoinMe!}.
+\end{enumerate}
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El álbum queda añadido al perfil del usuario.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{CU32 - Comentar una publicación}
+\subsubsection{Actores}
+Primario: Usuario.
+\subsubsection{Breve descripción}
+Las publicaciones pueden ser comentadas, bien por el usuario autor de la publicación o bien por los usuarios que pueden leer esa publicación. Para ello cada publicación dispone de un formulario y su correspondiente botón para enviar este comentario.
+
+\subsubsection{Flujo básico}
+\begin{enumerate}
+	\item El usuario visualiza una publicación.
+	\item El usuario escribe su comentario en el formulario que aparece bajo la publicación.
+	\item El usuario hace click en el botón de \textit{Enviar} para enviar el formulario.
+\end{enumerate}
+\subsubsection{Flujo alternativo}
+
+\begin{description}
+	\item [*a] El sistema falla:
+	\begin{enumerate}
+		\item El sistema muestra un mensaje para informar del fallo al usuario.
+		\item El sistema registra el fallo en un log.
+		\item El sistema cancela las acciones en caso necesario.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item [*b] El usuario cancela la operación:
+	\begin{enumerate}
+		\item El sistema aborta la operación.
+		\item El sistema redirige a la página de inicio.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Precondiciones}
+\begin{enumerate}
+	\item El usuario tiene un perfil creado en la red social \textbf{JoinMe!}.
+	\item El usuario tiene acceso a la publicación.
+\end{enumerate}
+\subsubsection{Postcondiciones}
+\begin{enumerate}
+	\item El comentario queda registrado en la publicación.
+\end{enumerate}
 
 %----------------------------------------
 \section{Matrices de trazabilidad}  
