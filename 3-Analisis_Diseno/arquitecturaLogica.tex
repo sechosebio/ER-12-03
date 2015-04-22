@@ -83,8 +83,10 @@ Grupo ER-12-03\\
 Este documento muestra una descripción del sistema usando diagramas y explicaciones textuales para representar la arquitectura lógica que está establecida en nuestro sistema.
 
 %**********************************************************
-\subsection{Ámbito}
+\subsection{Alcance}
 %**********************************************************
+
+En este documento se especifica la organización en clases, paquetes, subsistemas y capas de la aplicación.
 
 %**********************************************************
 \subsection{Definiciones, Acrónimos y Abreviaturas}
@@ -96,17 +98,13 @@ Ver Glosario
 \subsection{Referencias}
 %**********************************************************
 
-\begin{enumerate}
+\begin{itemize}
+
     \item JoinMe! - Glosario
     \item JoinMe! - Modelo de casos de uso
     \item JoinMe! - Especificación suplementaria
     \item JoinMe! - Modelo del dominio
-\end{enumerate}
-
-%**********************************************************
-\subsection{Resumen}
-%**********************************************************
-La siguiente sección describe la arquitectura lógica del sistema.
+\end{itemize}
 
 \pagebreak
 
@@ -120,4 +118,67 @@ La siguiente sección describe la arquitectura lógica del sistema.
 	\includegraphics[width=\textwidth]{Imagenes/Arquitectura_logica}
 \end{center}
 
+
+\section{Explicación}
+
+Considerando una división en tres capas:
+
+\begin{itemize}
+	\item \textbf{UI}: Capa que contiene el diseño de la interfaz de usuario para interactuar con el sistema.
+	\item \textbf{Dominio}: Capa que contiene toda la lógica de negocio y las entidades que se emplean en el sistema.
+	\item \textbf{Servicios Técnicos}: Capa donde se encuentra la persistencia de datos y el servicio de login de los usuarios.
+\end{itemize}
+
+\subsubsection{UI}
+La interfaz de usuario es única, es decir, será la misma para navegadores de ordenadores, como para dispositivos móviles, ya que será una interfaz \textit{responsive} que se adaptará a las necesidades de cada pantalla. Por lo que sólo existe el paquete: 
+	\begin{itemize}
+		\item \textbf{Interfaz}: Inicialmente sea un usuario normal o una empresa no existiría diferencia ninguna. El usuario tendrá que hacer login para poder ver las opciones que tiene disponibles.
+	\end{itemize}
+	
+	
+\subsubsection{Dominio}
+
+En la capa Dominio es donde se encuentra toda la lógica de negocio, en la cual hemos realizado la siguiente división por paquetes:
+\begin{itemize}
+	\item \textbf{Usuarios}: Contiene las clases relacionadas con los usuarios de la red social, tales como:
+		\begin{itemize}
+			\item Usuario
+			\item Fichero
+			\item Círculo
+			\item Álbum
+			\item Fichero
+			\item Multimedia
+			\item Vídeo
+			\item Fotografía
+		\end{itemize}
+	\item \textbf{Muro}: Incluye las clases relacionadas directamente con el muro, como son: 
+		\begin{itemize}
+			\item Comentario
+			\item Muro
+			\item Entrada
+			\item Categoría
+		\end{itemize}
+	\item \textbf{Grupo}: Clases relacionadas estrechamente con los Grupos.
+		\begin{itemize}
+			\item Grupo
+			\item Foro
+			\item Hilo
+			\item Respuesta
+		\end{itemize}
+	\item \textbf{Empresa}: Agrupa las clases que representan a las empresas.
+		\begin{itemize}
+			\item Empresa
+			\item Anuncio
+		\end{itemize}
+	
+\end{itemize}
+
+
+\subsubsection{Servicios Técnicos}
+
+Este paquete contiene las clases relacionadas con los servicios técnicos:
+\begin{itemize}
+	\item \textbf{Persistencia}: Representa las clases y métodos que dan acceso a la base de datos con todos los datos de las redes sociales.
+	\item \textbf{Login}: Servicio para comprobación de las credenciales de acceso a la red social.
+\end{itemize}
 \end{document}
