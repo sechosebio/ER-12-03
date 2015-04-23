@@ -1,28 +1,16 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FUENTE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Plantilla creada por Eduardo Mosqueira Rey basada en el original de Unified Process for EDUcation
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONFIGURACIÓN TEXSTUDIO DEL CORRECTOR ORTOGRÁFICO
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% !TeX spellcheck = en_US
-% Usar el lenguaje es_ES para la corrección en castellano
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TIPO DE DOCUMENTO Y PAQUETES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% Plantilla creada por Eduardo Mosqueira Rey
+%
+% Libro online bastante completo para consulta de Latex: http://en.wikibooks.org/wiki/LaTeX/
+% Versión en castellano: http://es.wikibooks.org/wiki/Manual_de_LaTeX
 \documentclass[12pt, a4paper, titlepage]{article}
 
-%\usepackage[spanish]{babel} % Soporte multilenguaje para LaTeX.
+\usepackage[spanish]{babel} % Soporte multilenguaje para LaTeX.
+
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} % Interfaz flexible para definir las dimensiones del documento
+
 \usepackage[utf8]{inputenc} % Aceptar diferentes tipos de codificación de caracteres de entrada (en este caso usamos la codificación Unicode UTF-8)
+
 \usepackage{graphicx} % Soporte aumentado para gráficos 
-\usepackage{color} % Para usar colores
-\usepackage{hyperref} % Para manejar referencias cruzadas. P.ej. añadir hiperenlaces al índice
 
 \begin{document}
 
@@ -35,37 +23,49 @@
 \includegraphics[width=15cm]{Imagenes/Simbolo_logo_UDC.png}
 
 % Lista de tamaños: \Huge, \huge, \LARGE, \Large, \large, \small, \footnotesize, \tiny
-\vspace{6cm}
+\vspace{3cm}
+
+\begin{center}
+\includegraphics[scale=0.3]{Imagenes/1a_Practica_ER_14-15.png}
+\end{center}
+
 
 \begin{flushright}
-
-	\LARGE{\textbf{\textless Project Name\textgreater}}
 	
-	\LARGE{\textbf{Use-Case Realization Specification}}\footnote{Plantilla creada por Eduardo Mosqueira Rey basada en el original de Unified Process for EDUcation}
+	\LARGE{\textbf{ JoinMe!}}
 	
-	\large{\textbf{Version \textless 1.0\textgreater}}
+	\LARGE{\textbf{Realización Casos de Uso}}
+	
+	\large{\textbf{Version 1.0}}
+	
 \end{flushright}
 
-\vspace{3cm}
+\vspace{1cm}
 \begin{center}
-	\large{\textbf{Revision History}}
+José Antonio López Sebio\\
+Pablo Paz Varela\\
+Grupo ER-12-03\\
+\end{center}
+
+\vspace{2cm}
+
+\begin{center}
+	\large{\textbf{Histórico}}
 	
-    \begin{tabular}{ | p{4cm} | p{2cm} | p{5cm} | p{4cm} |}
+    \begin{tabular}{ | p{4cm} | p{2cm} | p{6cm} | p{3cm} |}
     \hline
-    \textbf{Date} & \textbf{Version} & \textbf{Description} & \textbf{Author} \\ \hline
-    \textless dd/mm/yyyy\textgreater & \textless x.x\textgreater & \textless details\textgreater & \textless name\textgreater  \\ \hline
-    & & & \\ \hline
-    & & & \\ \hline
+    \textbf{Fecha} & \textbf{Version} & \textbf{Descripción} & \textbf{Autor} \\ \hline
+      15/04/2014 & 1.0 & Primera Revisión & ER-12-03\\ \hline
+      &  &  & \\ \hline
+     &  & &\\ \hline
     \end{tabular}
 \end{center}
 
 \end{titlepage}
 \clearpage
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INDICE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 \newpage
 
@@ -73,97 +73,111 @@
 \section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{blue}\textit{[The introduction of the Use-Case Realization Specification provides an overview of the entire document. It includes the purpose, scope, definitions, acronyms, abbreviations, references, and overview of this Use-Case Realization Specification.]}}
 
 %**********************************************************
-\subsection{Purpose}
+\subsection{Objetivo}
 %**********************************************************
 
-{\color{blue}\textit{[Specify the purpose of this Use-Case Realization Specification]}}
 
 %**********************************************************
-\subsection{Scope}
+\subsection{Ámbito}
 %**********************************************************
 
-{\color{blue}\textit{[A brief description of the scope of this Use-Case Realization Specification; what Use Case model(s) it is associated with, and anything else that is affected or influenced by this document.]}}
 
 %**********************************************************
-\subsection{Definitions, Acronyms, and Abbreviations}
+\subsection{Definiciones, Acrónimos y Abreviaturas}
 %**********************************************************
 
-{\color{blue}\textit{[This subsection provides the definitions of all terms, acronyms, and abbreviations required to properly interpret the Use-Case Realization Specification.  This information may be provided by reference to the project’s Glossary.]}}
-
 %**********************************************************
-\subsection{References}
+\subsection{Referencias}
 %**********************************************************
 
-{\color{blue}\textit{[This subsection provides a complete list of all documents referenced elsewhere in the Use-Case Realization Specification. Identify each document by title, report number (if applicable), date, and publishing organization. Specify the sources from which the references can be obtained. This information may be provided by reference to an appendix or to another document.]}}
-
-%**********************************************************
-\subsection{Overview}
-%**********************************************************
-
-{\color{blue}\textit{[This subsection describes what the rest of the Use-Case Realization Specification contains and explains how the document is organized.]}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\textless Use-Case Name One\textgreater}
+\section{CU-01 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{blue}\textit{[A textual description of how the use case is realized in terms of collaborating objects. Its main purpose is to summarize the diagrams connected to the use case and to explain how they are related.]}}
 
 %**********************************************************
-\subsection{Flow of Events}
+\subsection{Flujo de Eventos}
 %**********************************************************
 
-{\color{blue}\textit{[A textual description of how the use case is realized in terms of collaborating objects. Its main purpose is to summarize the diagrams connected to the use case and to explain how they are related.]}}
+
 
 %**********************************************************
-\subsection{Interaction Diagrams}
+\subsection{Diagrama de interacción}
 %**********************************************************
 
-{\color{blue}\textit{[The diagrams connected to the use case.]}}
+
 
 %----------------------------------------
-\subsubsection{Sequence Diagrams}  
+\subsubsection{Diagramas de secuencia}  
 %----------------------------------------
 
-{\color{blue}\textit{[Sequence diagrams connected to the use case.]}}
+
 
 %----------------------------------------
-\subsubsection{Communication Diagrams}  
+\subsubsection{Diagramas de comunicación}  
 %----------------------------------------
 
-{\color{blue}\textit{[Communication diagrams connected to the use case.]}}
 
 %**********************************************************
-\subsection{Participating Objects}
+\subsection{Objetos participantes}
 %**********************************************************
 
-{\color{blue}\textit{[Objects participating in interaction diagrams of the use-case realization.  A textual description of the collaborating objects related to a specific use case]}} \\
-
-\begin{tabular}{|p{3cm}|p{3cm}|p{9cm}|}
-\hline Object & Class & Description \\ 
-\hline  &  &  \\ 
-\hline  &  &  \\ 
-\hline 
-\end{tabular} 
-
 %**********************************************************
-\subsection{Class Diagrams}
+\subsection{Diagrama de clases}
 %**********************************************************
 
-{\color{blue}\textit{[Class diagrams connected to the use case.]}}
+
 
 %**********************************************************
-\subsection{Derived Requirements}
+\subsection{Requisitos derivados}
 %**********************************************************
-
-{\color{blue}\textit{[A textual description that collects all requirements, such as non-functional requirements, on the use-case realizations not considered in the design model, but that need to be taken care of during implementation.]}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\textless Use-Case Name Two\textgreater}
+\section{CU-02 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{blue}\textit{[...]}}
+
+%**********************************************************
+\subsection{Flujo de Eventos}
+%**********************************************************
+
+
+
+%**********************************************************
+\subsection{Diagrama de interacción}
+%**********************************************************
+
+
+
+%----------------------------------------
+\subsubsection{Diagramas de secuencia}  
+%----------------------------------------
+
+
+
+%----------------------------------------
+\subsubsection{Diagramas de comunicación}  
+%----------------------------------------
+
+
+%**********************************************************
+\subsection{Objetos participantes}
+%**********************************************************
+
+%**********************************************************
+\subsection{Diagrama de clases}
+%**********************************************************
+
+
+
+%**********************************************************
+\subsection{Requisitos derivados}
+%**********************************************************
+
+
+
 
 \end{document}
