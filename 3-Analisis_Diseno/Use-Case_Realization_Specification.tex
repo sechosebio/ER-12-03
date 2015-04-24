@@ -78,25 +78,238 @@ Grupo ER-12-03\\
 \subsection{Objetivo}
 %**********************************************************
 
+Este documento es una visión del sistema empleando diagramas, mostrando así la interacción entre las distintas partes del mismo.
 
 %**********************************************************
 \subsection{Ámbito}
 %**********************************************************
 
+\textbf{JoinMe!} es una red social, basado en una arquitectura cliente servidor que permite a los usuarios mantener el contacto con sus amigos, y a las empresas anunciarse de una manera más eficiente. 
 
 %**********************************************************
 \subsection{Definiciones, Acrónimos y Abreviaturas}
 %**********************************************************
 
+Las definiciones, acrónimos y abreviaturas se encuentran el el documento \textit{Glosario}.
+
 %**********************************************************
 \subsection{Referencias}
 %**********************************************************
 
+\begin{enumerate}
+	\item JoinMe! - Glosario
+    \item JoinMe! - Modelo de casos de uso
+    \item JoinMe! - Especificación suplementaria
+    \item JoinMe! - Modelo del dominio
+    \item JoinMe! - Arquitectura lógica
+    \item JoinMe! - DSS
+
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{CU-01 }
+\section{CU01 - Registrar usuario}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Este caso de uso permite a un futuro usuario poder registrarse en el sistema y así poder acceder a todas las funcionalidades disponibles en \textbf{JoinMe!}. Para ello el usuario tendrá que proporcionar sus datos personales o utilizar un certificado digital como puede ser el DNI-e.
+
+\begin{center}
+	\includegraphics{Imagenes/RegistrarUsuarioCU}
+\end{center}
+
+%**********************************************************
+\subsection{Flujo de Eventos}
+%**********************************************************
+El usuario introduce sus datos personales necesarios para el registro o utilizar un certificado digital.
+
+%**********************************************************
+\subsection{Diagrama de interacción}
+%**********************************************************
+
+
+
+\begin{center}
+	\includegraphics{Imagenes/OperacionRegistrarUsuario.pdf}
+\end{center}
+
+%**********************************************************
+\subsection{Objetos participantes}
+%**********************************************************
+
+\begin{center}
+
+\begin{tabular}{|c|p{14cm}|}
+	\hline
+	\textbf{Clase} & \textbf{Descripción}\\ \hline
+	\textbf{GestorUsuarios} &  Clase que se encarga de realizar las operaciones permitidas sobre los usuarios, tales como registro, modificación y baja.\\ \hline
+	\textbf{Usuario} & Clase que representa al usuario. \\ \hline
+\end{tabular}
+
+\end{center}
+
+%**********************************************************
+\subsection{Diagrama de clases}
+%**********************************************************
+
+
+%**********************************************************
+\subsection{Requisitos derivados}
+%**********************************************************
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CU03 - Aceptar solicitud de amistad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Este caso de uso representa la acción de aceptar una solicitud de amistad enviada por otro usuario de la red social \textbf{JoinMe!} que quiere añadir al usuario en cuestión a su círculo de amistades.
+
+\begin{center}
+	\includegraphics{Imagenes/AceptarSolicitudAmistadCU.pdf}
+\end{center}
+%**********************************************************
+\subsection{Flujo de Eventos}
+%**********************************************************
+
+
+
+%**********************************************************
+\subsection{Diagrama de interacción}
+%**********************************************************
+
+
+\begin{center}
+	\includegraphics{Imagenes/OperacionSolicitarAmistad}
+\end{center}
+
+
+
+%**********************************************************
+\subsection{Objetos participantes}
+%**********************************************************
+
+\begin{center}
+
+\begin{tabular}{|c|p{14cm}|}
+	\hline
+	\textbf{Clase} & \textbf{Descripción}\\ \hline
+	\textbf{GestorUsuarios} &  Clase que se encarga de realizar las operaciones permitidas sobre los usuarios, tales como registro, modificación y baja.\\ \hline
+	\textbf{Usuario} & Clase que representa al usuario. \\ \hline
+\end{tabular}
+
+\end{center}
+
+
+%**********************************************************
+\subsection{Diagrama de clases}
+%**********************************************************
+
+%**********************************************************
+\subsection{Requisitos derivados}
+%**********************************************************
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CU04 - Rechazar solicitud de amistad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Caso de uso que representa la acción de rechazar una petición de amistad enviada anteriormente por otro usuario de \textbf{JoinMe!}.
+
+\begin{center}
+	\includegraphics{Imagenes/RechazarSolicitudAmistadCU}
+\end{center}
+%**********************************************************
+\subsection{Flujo de Eventos}
+%**********************************************************
+
+
+
+%**********************************************************
+\subsection{Diagrama de interacción}
+%**********************************************************
+
+\begin{center}
+	\includegraphics{Imagenes/OperacionRechazarAmistad}
+\end{center}
+
+%**********************************************************
+\subsection{Objetos participantes}
+%**********************************************************
+\begin{center}
+
+\begin{tabular}{|c|p{14cm}|}
+	\hline
+	\textbf{Clase} & \textbf{Descripción}\\ \hline
+	\textbf{GestorUsuarios} &  Clase que se encarga de realizar las operaciones permitidas sobre los usuarios, tales como registro, modificación y baja.\\ \hline
+	\textbf{Usuario} & Clase que representa al usuario. \\ \hline
+\end{tabular}
+
+\end{center}
+
+
+%**********************************************************
+\subsection{Diagrama de clases}
+%**********************************************************
+
+%**********************************************************
+\subsection{Requisitos derivados}
+%**********************************************************
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CU05 - Ver amigos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Caso de uso que representa la opción de listar todos los amigos que tiene un usuario en la red social.
+
+\begin{center}
+	\includegraphics{Imagenes/VerAmigosCU.pdf}
+\end{center}
+%**********************************************************
+\subsection{Flujo de Eventos}
+%**********************************************************
+
+
+%**********************************************************
+\subsection{Diagrama de interacción}
+%**********************************************************
+
+\begin{center}
+	\includegraphics{Imagenes/OperacionObtenerListaAmigos}
+\end{center}
+
+%**********************************************************
+\subsection{Objetos participantes}
+%**********************************************************
+
+\begin{center}
+\begin{tabular}{|c|p{14cm}|}
+	\hline
+	\textbf{Clase} & \textbf{Descripción}\\ \hline
+	\textbf{GestorUsuarios} &  Clase que se encarga de realizar las operaciones permitidas sobre los usuarios, tales como registro, modificación y baja.\\ \hline
+	\textbf{Usuario} & Clase que representa al usuario. \\ \hline
+\end{tabular}
+
+\end{center}
+
+
+%**********************************************************
+\subsection{Diagrama de clases}
+%**********************************************************
+
+%**********************************************************
+\subsection{Requisitos derivados}
+%**********************************************************
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CU06 - Enviar solicitud de amistad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Caso de uso que representa la funcionalidad de enviar una solicitud a otro usuario de la res social que deseamos tener entre nuestros contactos en la red.
+
+\begin{center}
+	\includegraphics{Imagenes/EnviarSolicitudAmistadCU.pdf}
+\end{center}
 
 %**********************************************************
 \subsection{Flujo de Eventos}
@@ -109,75 +322,85 @@ Grupo ER-12-03\\
 %**********************************************************
 
 
-
-%----------------------------------------
-\subsubsection{Diagramas de secuencia}  
-%----------------------------------------
-
-
-
-%----------------------------------------
-\subsubsection{Diagramas de comunicación}  
-%----------------------------------------
-
-
+\begin{center}
+	\includegraphics{Imagenes/OperacionSolicitarAmistad}
+\end{center}
 %**********************************************************
 \subsection{Objetos participantes}
 %**********************************************************
+
+\begin{center}
+
+\begin{tabular}{|c|p{14cm}|}
+	\hline
+	\textbf{Clase} & \textbf{Descripción}\\ \hline
+	\textbf{GestorUsuarios} &  Clase que se encarga de realizar las operaciones permitidas sobre los usuarios, tales como registro, modificación y baja.\\ \hline
+	\textbf{Usuario} & Clase que representa al usuario. \\ \hline
+\end{tabular}
+
+\end{center}
 
 %**********************************************************
 \subsection{Diagrama de clases}
 %**********************************************************
 
-
-
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{CU-02 }
+\section{CU011 - Crear entrada}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+Este caso de uso muestra la funcionalidad de crear una entrada que será publicada en la red social. Una entrada que podrá contener, imágenes o vídeos y podrá ser comentada por otros usuarios.
+
+\begin{center}
+	\includegraphics{Imagenes/CrearEntradaCU.pdf}
+\end{center}
 
 %**********************************************************
 \subsection{Flujo de Eventos}
 %**********************************************************
 
 
-
 %**********************************************************
 \subsection{Diagrama de interacción}
 %**********************************************************
 
+\begin{center}
+	\includegraphics{Imagenes/OperacionNuevaEntrada.pdf}
+\end{center}
 
+\begin{center}
+	\includegraphics{Imagenes/OperacionSubirFotografia}
+\end{center}
 
-%----------------------------------------
-\subsubsection{Diagramas de secuencia}  
-%----------------------------------------
+\begin{center}
+	\includegraphics{Imagenes/OperacionSubirVideo}
+\end{center}
 
-
-
-%----------------------------------------
-\subsubsection{Diagramas de comunicación}  
-%----------------------------------------
-
-
+\begin{center}
+	\includegraphics{Imagenes/OperacionPublicarEntrada.pdf}
+\end{center}
 %**********************************************************
 \subsection{Objetos participantes}
 %**********************************************************
+
+\begin{center}
+
+\begin{tabular}{|c|p{14cm}|}
+	\hline
+	\textbf{Clase} & \textbf{Descripción}\\ \hline
+\end{tabular}
+
+\end{center}
 
 %**********************************************************
 \subsection{Diagrama de clases}
 %**********************************************************
 
-
-
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
-
-
-
 
 \end{document}
