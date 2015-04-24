@@ -12,6 +12,7 @@
 
 \usepackage{graphicx} % Soporte aumentado para gráficos 
 \usepackage{captdef} %captions personalizadas
+\usepackage{rotating}
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,7 +155,7 @@ En el caso de {\sc registrar usuario } se han identificado las siguientes operac
 \subsection{Diagrama de clases}
 %**********************************************************
 
-
+Se ha optado por realizar un diagrama de clases completo, éste, puede verse en la sección \ref{sec:Diagrama} Diagrama de Clases.
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
@@ -178,7 +179,7 @@ Este caso de uso representa la acción de aceptar una solicitud de amistad envia
 \subsection{Flujo de Eventos}
 %**********************************************************
 
-
+El usuario acepta la solicitud de amistad que tiene en su bandeja de solicitudes haciendo click en el botón oportuno.
 
 %**********************************************************
 \subsection{Diagrama de interacción}
@@ -216,7 +217,7 @@ En el caso de {\sc aceptar solicitud de amistad } se han identificado las siguie
 %**********************************************************
 \subsection{Diagrama de clases}
 %**********************************************************
-
+Se ha optado por realizar un diagrama de clases completo, éste, puede verse en la sección \ref{sec:Diagrama} Diagrama de Clases.
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
@@ -238,7 +239,7 @@ Caso de uso que representa la acción de rechazar una petición de amistad envia
 \subsection{Flujo de Eventos}
 %**********************************************************
 
-
+El usuario rechaza la solicitud de amistad que tiene en la bandeja de solicitudes de amistad haciendo uso del botón de rechazar solicitud.
 
 %**********************************************************
 \subsection{Diagrama de interacción}
@@ -271,7 +272,7 @@ En el caso de {\sc rechazar solicitud de amistad } se han identificado las sigui
 %**********************************************************
 \subsection{Diagrama de clases}
 %**********************************************************
-
+Se ha optado por realizar un diagrama de clases completo, éste, puede verse en la sección \ref{sec:Diagrama} Diagrama de Clases.
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
@@ -295,6 +296,7 @@ Caso de uso que representa la opción de listar todos los amigos que tiene un us
 \subsection{Flujo de Eventos}
 %**********************************************************
 
+El usuario mediante la opción disponible en la interfaz, solicita consultar su lista de amigos.
 
 %**********************************************************
 \subsection{Diagrama de interacción}
@@ -328,7 +330,7 @@ En el caso de {\sc ver amigos } se han identificado las siguientes operaciones:
 %**********************************************************
 \subsection{Diagrama de clases}
 %**********************************************************
-
+Se ha optado por realizar un diagrama de clases completo, éste, puede verse en la sección \ref{sec:Diagrama} Diagrama de Clases.
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
@@ -352,7 +354,7 @@ Caso de uso que representa la funcionalidad de enviar una solicitud a otro usuar
 \subsection{Flujo de Eventos}
 %**********************************************************
 
-
+El usuario, envía una solicitud de amistad haciendo click en el botón de enviar solicitud que está en la interfaz del perfil del usuario que desea agregar.
 
 %**********************************************************
 \subsection{Diagrama de interacción}
@@ -384,7 +386,7 @@ En el caso de {\sc enviar solicitud de amistad } se han identificado las siguien
 %**********************************************************
 \subsection{Diagrama de clases}
 %**********************************************************
-
+Se ha optado por realizar un diagrama de clases completo, éste, puede verse en la sección \ref{sec:Diagrama} Diagrama de Clases.
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
@@ -450,7 +452,7 @@ En el caso de {\sc crear entrada} se han identificado las siguientes operaciones
 %**********************************************************
 \subsection{Diagrama de clases}
 %**********************************************************
-
+Se ha optado por realizar un diagrama de clases completo, éste, puede verse en la sección \ref{sec:Diagrama} Diagrama de Clases.
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
@@ -460,8 +462,14 @@ En el caso de {\sc crear entrada} se han identificado las siguientes operaciones
 	\item Información por pantalla en caso de error.
 \end{itemize}
 
+\newpage
+\section{Diagrama de clases}\label{sec:Diagrama}
 
-\section{Diagrama de clases}
+	
 
+\begin{center}
+	\includegraphics[scale=0.8,angle=90]{Imagenes/DiagramaClases}
+	\figcaption{Diagrama de clases}
+\end{center}
 
 \end{document}
