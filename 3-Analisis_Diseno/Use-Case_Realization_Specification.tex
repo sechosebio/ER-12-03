@@ -11,7 +11,7 @@
 \usepackage[utf8]{inputenc} % Aceptar diferentes tipos de codificación de caracteres de entrada (en este caso usamos la codificación Unicode UTF-8)
 
 \usepackage{graphicx} % Soporte aumentado para gráficos 
-
+\usepackage{captdef} %captions personalizadas
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -125,7 +125,11 @@ El usuario introduce sus datos personales necesarios para el registro o utilizar
 \subsection{Diagrama de interacción}
 %**********************************************************
 
+En el caso de {\sc registrar usuario } se han identificado las siguientes operaciones:
 
+\begin{itemize}
+	\item El usuario introduce sus datos y los envía al sistema mediante la operacion \textbf{registrarUsuario}.
+\end{itemize}
 
 \begin{center}
 	\includegraphics{Imagenes/OperacionRegistrarUsuario.pdf}
@@ -155,6 +159,11 @@ El usuario introduce sus datos personales necesarios para el registro o utilizar
 \subsection{Requisitos derivados}
 %**********************************************************
 
+\begin{itemize}
+	\item Recuperación robusta cuando el usuario inserta datos incorrectos.
+	\item Información por pantalla en caso de error.
+\end{itemize}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CU03 - Aceptar solicitud de amistad}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -175,9 +184,15 @@ Este caso de uso representa la acción de aceptar una solicitud de amistad envia
 \subsection{Diagrama de interacción}
 %**********************************************************
 
+En el caso de {\sc aceptar solicitud de amistad } se han identificado las siguientes operaciones:
+
+\begin{itemize}
+	\item El usuario acepta la petición de amistad a través de la operación \textbf{aceptarAmistad}.
+	\item El sistema registra la aceptación y añade el amigo a lista de amigos con la operación \textbf{aceptarAmigo}.
+\end{itemize}
 
 \begin{center}
-	\includegraphics{Imagenes/OperacionSolicitarAmistad}
+	\includegraphics{Imagenes/OperacionAceptarAmistad}
 \end{center}
 
 
@@ -205,7 +220,10 @@ Este caso de uso representa la acción de aceptar una solicitud de amistad envia
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
-
+\begin{itemize}
+	\item Recuperación robusta en caso de fallo del sistema.
+	\item Información por pantalla en caso de error.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CU04 - Rechazar solicitud de amistad}
@@ -225,6 +243,11 @@ Caso de uso que representa la acción de rechazar una petición de amistad envia
 %**********************************************************
 \subsection{Diagrama de interacción}
 %**********************************************************
+En el caso de {\sc rechazar solicitud de amistad } se han identificado las siguientes operaciones:
+
+\begin{itemize}
+	\item El usuario rechazar la solicitud con la operación \textbf{rechazarAmistad}.
+\end{itemize}
 
 \begin{center}
 	\includegraphics{Imagenes/OperacionRechazarAmistad}
@@ -253,6 +276,11 @@ Caso de uso que representa la acción de rechazar una petición de amistad envia
 \subsection{Requisitos derivados}
 %**********************************************************
 
+\begin{itemize}
+	\item Recuperación robusta cuando el usuario inserta datos incorrectos.
+	\item Información por pantalla en caso de error.
+\end{itemize}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CU05 - Ver amigos}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -271,6 +299,12 @@ Caso de uso que representa la opción de listar todos los amigos que tiene un us
 %**********************************************************
 \subsection{Diagrama de interacción}
 %**********************************************************
+
+En el caso de {\sc ver amigos } se han identificado las siguientes operaciones:
+
+\begin{itemize}
+	\item El usuario obtiene la lista de amigos haciendo uso de la operación \textbf{obtenerListaAmigos}.
+\end{itemize}
 
 \begin{center}
 	\includegraphics{Imagenes/OperacionObtenerListaAmigos}
@@ -299,7 +333,10 @@ Caso de uso que representa la opción de listar todos los amigos que tiene un us
 \subsection{Requisitos derivados}
 %**********************************************************
 
-
+\begin{itemize}
+	\item Recuperación robusta cuando el usuario inserta datos incorrectos.
+	\item Información por pantalla en caso de error.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CU06 - Enviar solicitud de amistad}
@@ -320,7 +357,11 @@ Caso de uso que representa la funcionalidad de enviar una solicitud a otro usuar
 %**********************************************************
 \subsection{Diagrama de interacción}
 %**********************************************************
+En el caso de {\sc enviar solicitud de amistad } se han identificado las siguientes operaciones:
 
+\begin{itemize}
+	\item El usuario envía la solicitud de amistad al otro usuario haciendo uso de la operación \textbf{solicitarAmistad}.
+\end{itemize}
 
 \begin{center}
 	\includegraphics{Imagenes/OperacionSolicitarAmistad}
@@ -347,6 +388,12 @@ Caso de uso que representa la funcionalidad de enviar una solicitud a otro usuar
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
+
+\begin{itemize}
+	\item Recuperación robusta cuando el usuario inserta datos incorrectos.
+	\item Información por pantalla en caso de error.
+\end{itemize}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CU011 - Crear entrada}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -367,6 +414,11 @@ Este caso de uso muestra la funcionalidad de crear una entrada que será publica
 \subsection{Diagrama de interacción}
 %**********************************************************
 
+En el caso de {\sc crear entrada} se han identificado las siguientes operaciones:
+
+\begin{itemize}
+	\item 
+\end{itemize}
 \begin{center}
 	\includegraphics{Imagenes/OperacionNuevaEntrada.pdf}
 \end{center}
@@ -402,5 +454,14 @@ Este caso de uso muestra la funcionalidad de crear una entrada que será publica
 %**********************************************************
 \subsection{Requisitos derivados}
 %**********************************************************
+
+\begin{itemize}
+	\item Recuperación robusta cuando el usuario inserta datos incorrectos.
+	\item Información por pantalla en caso de error.
+\end{itemize}
+
+
+\section{Diagrama de clases}
+
 
 \end{document}
