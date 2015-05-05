@@ -109,3 +109,4 @@ sympy-plots-for-*.tex/
 *.xdy
 
 .DS_STORE
+/4-Implementacion/ER-12-03/nbproject/private/
