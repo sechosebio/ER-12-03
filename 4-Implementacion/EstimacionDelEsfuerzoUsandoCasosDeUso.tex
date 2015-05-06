@@ -104,8 +104,72 @@ Ver Glosario
     \item JoinMe! - Modelo del dominio
 \end{itemize}
 
-\pagebreak
+\section{UUCW: Unadjusted Use Case Weight}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+	\hline
+	Caso de Uso & Número de Transacciones (o clases) & Peso \\ \hline
+	Simple & De 1 a 3 transacciones (menos de 5 clases) & 5 \\ \hline
+	Medio & De 4 a 7 transacciones (de 5 a 10 clases) & 10 \\ \hline
+	Complejo & 8 o más transacciones (más de 10 clases) & 15 \\ \hline
+	
+	\end{tabular}
+	\caption{Clasificación Casos de Uso}
+	\end{center}
+\end{table}
 
 
+
+\section{UAW: Unadjusted Actor Weight}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|p{12cm}|c|}
+	\hline
+	Actor & Descripción  & Peso \\ \hline
+	Simple & Sistema externo que interactúa con el sistema a través de un API bien definido & 1 \\ \hline
+	Medio & Sistema externo que interactúa con el sistema a través de protocolos de comunicación (TCP/IP, FTP, HTTP, base de datos, etc)  & 2 \\ \hline
+	Complejo & Actor humano usando un interfaz gráfico de la aplicación & 3 \\ \hline
+	
+	\end{tabular}
+	\caption{Clasificación Casos de Uso}
+	\end{center}
+\end{table}
+
+\section{TCF: Technical Complexity Factor}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|p{10cm}|c|c|c|}
+			\hline
+			Factor & Descripción & Peso & Valor & Impacto \\ \hline
+			T1 & Sistema distribuido & 2 & 5 & 10 \\ \hline
+			T2 & Objetivos de performance o tiempo de respuesta & 1 & 5 & 5 \\ \hline
+			T3 & Eficiencia del usuario final & 1 & 3 & 3 \\ \hline
+			T4 & Procesamiento interno complejo & 1 & 2 & 2 \\ \hline
+			T5 & El código debe ser reutilizable & 1 & 3 & 3 \\ \hline
+			T6 & Facilidad de instalción & 0.5 & 1 & 0.5 \\ \hline
+			T7 & Facilidad de uso & 0.5 & 5 & 2.5 \\ \hline
+			T8 & Portabilidad & 2 & 2 & 4 \\ \hline
+			T9 & Facilidad de cambio & 1 & 2 & 2 \\ \hline
+			T10 & Concurrencia & 1 & 3 & 3 \\ \hline
+			T11 & Incluye objetivos especiales de seguridad & 1 & 5 & 5 \\ \hline
+			T12 & Provee acceso directo a terceras partes & 1 & 1 & 1 \\ \hline
+			T13 & Se requiere facilidades especiales de entrenamiento a usuario & 1 & 1 & 1 \\ \hline
+
+	
+	
+	\end{tabular}
+	\caption{Clasificación Casos de Uso}
+	\end{center}
+\end{table}
+
+\section{ECF: Environmental Complexity Factor}
+
+\section{UCP: Use Case Point}
+
+\section{Personas - Hora}
 
 \end{document}
