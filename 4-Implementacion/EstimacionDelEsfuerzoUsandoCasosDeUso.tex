@@ -12,6 +12,7 @@
 
 \usepackage{graphicx} % Soporte aumentado para gráficos 
 \usepackage{hyperref}
+\usepackage{longtable}
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,6 +122,65 @@ Ver Glosario
 \end{table}
 
 
+	\begin{center}
+		\begin{longtable}{|c|c|}
+			\hline
+			Caso de Uso & Categoría \\ \hline
+			\endfirsthead
+			\hline
+			Caso de Uso & Categoría \\ 
+			\endhead
+			CU01 - Registrar usuario & Simple \\ \hline
+			CU02 - Modificación de perfil & Simple \\ \hline
+			CU03 - Aceptar solicitud de amistad & Simple \\ \hline
+			CU04 - Rechazar solicitud de amistad & Simple \\ \hline
+			CU05 - Ver amigos & Simple \\ \hline
+			CU06 - Enviar solicitud de amistad & Simple \\ \hline
+			CU07 - Crear círculo & Simple \\ \hline
+			CU08 - Borrar círculo & Simple \\ \hline
+			CU09 - Añadir amigo a círculo & Simple \\ \hline
+			CU10 - Eliminar amigo de un círculo & Simple \\ \hline
+			CU11 - Cambiar frase de estado & Simple \\ \hline
+			CU12 - Publicar acción en el muro & Simple \\ \hline
+			CU13 - Crear entrada & Complejo \\ \hline
+			CU14 - Borrar entrada & Simple \\ \hline
+			CU15 - Editar entrada & Complejo \\ \hline
+			CU16 - Crear grupo & Simple \\ \hline
+			CU17 - Eliminar grupo & Simple \\ \hline
+			CU18 - Ingresar en un grupo & Simple \\ \hline
+			CU19 - Salir de un grupo & Simple \\ \hline
+			CU20 - Publicar noticia en un grupo & Simple \\ \hline
+			CU21 - Crear hilo en un foro de discusión de grupo & Simple \\ \hline
+			CU22 - Responder en un hilo del grupo & Simple \\ \hline
+			CU23 - Crear álbum de fotografías & Simple \\ \hline
+			CU24 - Subir fotografía & Simple \\ \hline
+			CU25 - Borrar álbum de fotografías & Simple \\ \hline
+			CU26 - Borrar fotografía & Simple \\ \hline
+			CU27 - Etiquetar contacto en fotografía & Simple \\ \hline
+			CU28 - Borrar etiqueta de fotografía & Simple \\ \hline
+			CU29 - Edición sencilla de fotos & Medio \\ \hline
+			CU30 - Subir vídeo & Simple \\ \hline
+			CU31 - Borrar vídeo & Simple \\ \hline
+			CU32 - Comentar una publicación & Simple \\ \hline
+			CU33 - Borrar comentario & Simple \\ \hline
+			CU34 - Enviar mensaje privado & Simple \\ \hline
+			CU35 - Mostrar página de início & Simple \\ \hline
+			CU36 - Filtrar información en página de inicio & Medio \\ \hline
+			CU37 - Subir ficheros & Simple \\ \hline
+			CU38 - Borrar ficheros & Simple \\ \hline
+			CU39 - Comprar \textit{JoinMe! Coins} & Simple \\ \hline
+			CU40 - Regalar \textit{JoinMe! Coins} & Simple \\ \hline
+			CU41 - Consultar catálogo de productos & Simple \\ \hline
+			CU42 - Comprar un producto & Simple \\ \hline
+			CU43 - Indicar relevancia de un anuncio & Simple \\ \hline
+			CU44 - Crear un anuncio & Simple \\ \hline
+		
+		\caption{Clasificación Casos de Uso} 
+		\end{longtable}
+		
+	\end{center}
+
+
 
 \section{UAW: Unadjusted Actor Weight}
 
@@ -134,7 +194,20 @@ Ver Glosario
 	Complejo & Actor humano usando un interfaz gráfico de la aplicación & 3 \\ \hline
 	
 	\end{tabular}
-	\caption{Clasificación Casos de Uso}
+	\caption{Clasificación Actores}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			Actor & Categoría \\ \hline
+			Usuario & Complejo \\ \hline
+			Empresa & Complejo \\ \hline
+			
+		\end{tabular}
+		\caption{Clasificación Actores}
 	\end{center}
 \end{table}
 
@@ -148,28 +221,76 @@ Ver Glosario
 			T1 & Sistema distribuido & 2 & 5 & 10 \\ \hline
 			T2 & Objetivos de performance o tiempo de respuesta & 1 & 5 & 5 \\ \hline
 			T3 & Eficiencia del usuario final & 1 & 3 & 3 \\ \hline
-			T4 & Procesamiento interno complejo & 1 & 2 & 2 \\ \hline
+			T4 & Procesamiento interno complejo & 1 & 3 & 3 \\ \hline
 			T5 & El código debe ser reutilizable & 1 & 3 & 3 \\ \hline
-			T6 & Facilidad de instalción & 0.5 & 1 & 0.5 \\ \hline
+			T6 & Facilidad de instalción & 0.5 & 2 & 1 \\ \hline
 			T7 & Facilidad de uso & 0.5 & 5 & 2.5 \\ \hline
-			T8 & Portabilidad & 2 & 2 & 4 \\ \hline
-			T9 & Facilidad de cambio & 1 & 2 & 2 \\ \hline
+			T8 & Portabilidad & 2 & 4 & 8 \\ \hline
+			T9 & Facilidad de cambio & 1 & 4 & 4 \\ \hline
 			T10 & Concurrencia & 1 & 3 & 3 \\ \hline
 			T11 & Incluye objetivos especiales de seguridad & 1 & 5 & 5 \\ \hline
 			T12 & Provee acceso directo a terceras partes & 1 & 1 & 1 \\ \hline
 			T13 & Se requiere facilidades especiales de entrenamiento a usuario & 1 & 1 & 1 \\ \hline
+			& & & TF = & 49.5 \\ \hline
 
 	
 	
 	\end{tabular}
-	\caption{Clasificación Casos de Uso}
+	\caption{Technical Factor}
 	\end{center}
 \end{table}
 
+TCF = 0.6 + (49.5 / 100) = 1.095
+
 \section{ECF: Environmental Complexity Factor}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|p{10cm}|c|c|c|}
+			\hline
+			Factor & Descripción & Peso & Valor & Impacto \\ \hline
+			E1 & Familiaridad con la metodología de desarrollo & 1.5 & 2 & 3 \\ \hline
+			E2 & Experiencia en la aplicación & 0.5 & 0 & 0 \\ \hline
+			E3 & Experiencia en orientación a objetos & 1 & 5 & 5 \\ \hline
+			E4 & Capacidad del analista líder & 0.5 & 5 & 2.5 \\ \hline
+			E5 & Motivación & 1 & 3 & 3 \\ \hline
+			E6 & Estabilidad de los requisitos & 2 & 2 & 4 \\ \hline
+			E7 & Personal a tiempo parcial  & -1 & 3 & -3 \\ \hline
+			E8 & Dificultad del lenguaje de programación & -1 & 1 & -1 \\ \hline
+			& & & EF = & 13.5 \\ \hline
+			
+			
+			
+		\end{tabular}
+		\caption{Environmental Factor}
+	\end{center}
+\end{table}
+
+ECF = 1.4 + (-0.03 * 13.5) = 0.995
 
 \section{UCP: Use Case Point}
 
+UCP = (UUCW + UAW) * TCF * ECF 
+= (250 + 6) * 1.095 * 0.995 
+= 278.9184
+
 \section{Personas - Hora}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			UUCW & Unadjusted Use Case Weight & 250 \\ \hline
+			UAW & Unadjusted Actor Weight & 6 \\ \hline
+			TCF & Technical Complexity Factor & 1.095 \\ \hline
+			ECF & Environmental Complexity Factor & 0.995 \\ \hline
+			UCP & Use Case Point & 278.9184 \\ \hline
+			PF &  Productivity Factor & 22 \\ \hline
+			MH &  Man-Hour, Personas-Hora & 6136,2048 \\ \hline
+			
+		\end{tabular}
+		\caption{Cálculos finales}
+	\end{center}
+\end{table}
 
 \end{document}
