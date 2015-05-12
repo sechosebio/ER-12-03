@@ -1,6 +1,8 @@
 package UI.Controlador;
 
+import Dominio.Muro.Muro;
 import Dominio.Usuario.Usuario;
+import ServiciosTecnicos.Persistencia.Persistencia;
 import UI.Interfaz.RegistroUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +16,7 @@ public class ControladorRegistroUsuario {
     Usuario usuario;
     RegistroUsuario vista;
 
-    ControladorRegistroUsuario(final RegistroUsuario vista) {
+    ControladorRegistroUsuario(final RegistroUsuario vista, final Persistencia persistencia) {
         this.usuario = usuario;
         this.vista = vista;
         
@@ -26,8 +28,9 @@ public class ControladorRegistroUsuario {
                String sgApellido = vista.getSegundApellido();
                String email = vista.getEmail();
                String pass = vista.getContrasena();
-               usuario = new Usuario(nombre,prApellido,sgApellido,email,pass);
-               
+               usuario = new Usuario(nombre,prApellido,sgApellido,email,pass, new Muro());
+               persistencia.addUser(usuario);
+               vista.dispose();
             }
         });
     }

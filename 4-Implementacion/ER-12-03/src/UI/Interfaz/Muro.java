@@ -1,16 +1,42 @@
 package UI.Interfaz;
 
+import Dominio.Muro.Entrada;
+import java.awt.event.ActionListener;
+import java.util.List;
+import javax.swing.AbstractListModel;
+
 /**
  *
  * @author jose
  */
 public class Muro extends javax.swing.JFrame {
 
+    
+    Dominio.Muro.Muro muro;
+    
     /**
      * Creates new form Muro
      */
-    public Muro() {
+    public Muro(final Dominio.Muro.Muro muro) {
+        this.muro = muro;
         initComponents();
+        actualizar();
+    }
+    
+    public final void actualizar(){
+        jList1.setModel(new AbstractListModel() {
+
+            List<Entrada> entradas = muro.getEntradas();
+            @Override
+            public int getSize() {
+                return entradas.size();
+            }
+
+            @Override
+            public Object getElementAt(int index) {
+                return entradas.get(index).getContenido() + "  " + entradas.get(index).getFecha().getTime().toString();
+            }
+        });
     }
 
     /**
@@ -23,6 +49,7 @@ public class Muro extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
@@ -39,7 +66,9 @@ public class Muro extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jScrollPane1.setViewportView(jList1);
 
         jLabel1.setText("Muro");
 
@@ -147,40 +176,13 @@ public class Muro extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Muro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Muro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Muro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Muro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+public void setPublicarListener(ActionListener al){
+    jButton1.addActionListener(al);
+}    
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Muro().setVisible(true);
-            }
-        });
-    }
+public String getContenido(){
+    return jTextPane1.getText();
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -189,6 +191,7 @@ public class Muro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JList jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

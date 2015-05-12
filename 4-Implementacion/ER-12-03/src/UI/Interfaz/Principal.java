@@ -50,11 +50,6 @@ public class Principal extends javax.swing.JFrame {
         botonIniciarSesion.setText("Iniciar Sesión");
 
         botonNuevoUsuario.setText("Nuevo Usuario");
-        botonNuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonNuevoUsuarioActionPerformed(evt);
-            }
-        });
 
         jMenu1.setText("Archivo");
 
@@ -150,12 +145,10 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void botonNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoUsuarioActionPerformed
-        // TODO add your handling code here:
-        RegistroUsuario vntRegistroUsuario = new RegistroUsuario();
-        vntRegistroUsuario.setVisible(true);
-    }//GEN-LAST:event_botonNuevoUsuarioActionPerformed
-
+    public void setNuevoUsuarioListener(ActionListener al){
+        botonNuevoUsuario.addActionListener(al);
+    }
+    
     public void setIniciarSesionListener(ActionListener al){
         botonIniciarSesion.addActionListener(al);
     }

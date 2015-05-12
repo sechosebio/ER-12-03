@@ -3,6 +3,7 @@ package UI.Controlador;
 import ServiciosTecnicos.Persistencia.Persistencia;
 import UI.Interfaz.Muro;
 import UI.Interfaz.Principal;
+import UI.Interfaz.RegistroUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -29,12 +30,24 @@ public class ControladorPrincipal {
                 String email = vista.getEmail();
                  
                 if(persistencia.existeUsuario(email)){
-                    muro = new Muro();
-                    muro.setVisible(true);
+                    Dominio.Muro.Muro muro = persistencia.getUser(email).getMuro();
+                    Muro m= new Muro(muro);
+                    m.setVisible(true);
+                    new ControladorMuro(m, persistencia, muro);
                 }else{
                     JOptionPane.showMessageDialog(vista, "Usuario no existe");
                     System.out.println("No existe");
                 }
+            }
+        });
+        
+        vista.setNuevoUsuarioListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RegistroUsuario vntRegistroUsuario = new RegistroUsuario();
+                vntRegistroUsuario.setVisible(true);
+                new ControladorRegistroUsuario(vntRegistroUsuario, persistencia);
             }
         });
         

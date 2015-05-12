@@ -15,6 +15,11 @@ public class Entrada {
     private String contenido;
     private Muro muro;
     private Usuario autor;
+
+    public Entrada(Calendar fecha, String contenido) {
+        this.fecha = fecha;
+        this.contenido = contenido;
+    }
     
     public int getId() {
         return id;

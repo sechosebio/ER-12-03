@@ -1,6 +1,8 @@
 package Dominio.Muro;
 
 import Dominio.Usuario.Usuario;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -10,6 +12,8 @@ public class Muro {
     
     private int id;
     private Usuario dueno;
+    
+    private List<Entrada> entradas = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -27,5 +31,11 @@ public class Muro {
         this.dueno = dueno;
     }
     
+    public List<Entrada> getEntradas(){
+        return entradas;
+    }
     
+    public void addEntrada(Entrada e){
+        entradas.add(e);
+    }
 }

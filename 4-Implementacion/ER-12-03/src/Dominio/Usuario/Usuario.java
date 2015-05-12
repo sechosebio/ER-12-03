@@ -1,6 +1,10 @@
 
 package Dominio.Usuario;
 
+import Dominio.Muro.Muro;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author jose
@@ -14,6 +18,17 @@ public class Usuario {
     private String primerApellido;
     private String segundoapellido;
     private double dinero;
+    
+    private Muro muro;
+    private List<Usuario> amigos = new ArrayList<>();
+
+    public Muro getMuro() {
+        return muro;
+    }
+
+    public void setMuro(Muro muro) {
+        this.muro = muro;
+    }
 
     public int getId() {
         return id;
@@ -71,12 +86,13 @@ public class Usuario {
         this.dinero = dinero;
     }
 
-    public Usuario(String nombre, String primerApellido, String segundoapellido,String email, String contraseña) {
+    public Usuario(String nombre, String primerApellido, String segundoapellido,String email, String contraseña, Muro muro) {
         this.email = email;
         this.contraseña = contraseña;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoapellido = segundoapellido;
+        this.muro = muro;
     }
     
     
