@@ -5,6 +5,7 @@ import UI.Interfaz.Muro;
 import UI.Interfaz.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,6 +32,7 @@ public class ControladorPrincipal {
                     muro = new Muro();
                     muro.setVisible(true);
                 }else{
+                    JOptionPane.showMessageDialog(vista, "Usuario no existe");
                     System.out.println("No existe");
                 }
             }
