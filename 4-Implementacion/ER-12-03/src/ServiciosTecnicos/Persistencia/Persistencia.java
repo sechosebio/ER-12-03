@@ -18,7 +18,8 @@ public class Persistencia {
     
     public boolean existeUsuario(String email){
         for (Usuario usuario : usuarios) {
-            if(usuario.getEmail()== email){
+            System.out.println(usuario.getEmail());
+            if(usuario.getEmail().equals(email)){
                 return true;
             }
         }

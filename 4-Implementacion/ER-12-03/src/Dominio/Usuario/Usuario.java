@@ -71,7 +71,7 @@ public class Usuario {
         this.dinero = dinero;
     }
 
-    public Usuario(String email, String contraseña, String nombre, String primerApellido, String segundoapellido) {
+    public Usuario(String nombre, String primerApellido, String segundoapellido,String email, String contraseña) {
         this.email = email;
         this.contraseña = contraseña;
         this.nombre = nombre;
