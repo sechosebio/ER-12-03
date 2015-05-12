@@ -70,6 +70,14 @@ public class Usuario {
     public void setDinero(double dinero) {
         this.dinero = dinero;
     }
+
+    public Usuario(String email, String contraseña, String nombre, String primerApellido, String segundoapellido) {
+        this.email = email;
+        this.contraseña = contraseña;
+        this.nombre = nombre;
+        this.primerApellido = primerApellido;
+        this.segundoapellido = segundoapellido;
+    }
     
     
     
