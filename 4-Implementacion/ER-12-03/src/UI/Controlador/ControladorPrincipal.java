@@ -2,6 +2,7 @@ package UI.Controlador;
 
 import ServiciosTecnicos.Persistencia.Persistencia;
 import UI.Interfaz.Muro;
+import UI.Interfaz.Perfil;
 import UI.Interfaz.Principal;
 import UI.Interfaz.RegistroUsuario;
 import java.awt.event.ActionEvent;
@@ -34,6 +35,8 @@ public class ControladorPrincipal {
                     Muro m= new Muro(muro);
                     m.setVisible(true);
                     new ControladorMuro(m, persistencia, muro);
+                    Perfil perfil = new Perfil(persistencia.getUser(email));
+                    perfil.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(vista, "Usuario no existe");
                     System.out.println("No existe");

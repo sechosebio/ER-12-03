@@ -3,6 +3,7 @@ package UI.Controlador;
 import Dominio.Muro.Muro;
 import Dominio.Usuario.Usuario;
 import ServiciosTecnicos.Persistencia.Persistencia;
+import UI.Interfaz.Perfil;
 import UI.Interfaz.RegistroUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,6 +32,9 @@ public class ControladorRegistroUsuario {
                usuario = new Usuario(nombre,prApellido,sgApellido,email,pass, new Muro());
                persistencia.addUser(usuario);
                vista.dispose();
+               Perfil perfil = new Perfil(usuario);
+               perfil.setVisible(true);
+               new ControladorPerfil(perfil, persistencia);
             }
         });
     }

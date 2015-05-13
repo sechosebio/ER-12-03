@@ -86,6 +86,16 @@ public class Usuario {
         this.dinero = dinero;
     }
 
+    public List<Usuario> getAmigos() {
+        return amigos;
+    }
+
+    public void addAmigo(Usuario amigo) {
+        amigos.add(amigo);
+    }
+    
+    
+
     public Usuario(String nombre, String primerApellido, String segundoapellido,String email, String contraseña, Muro muro) {
         this.email = email;
         this.contraseña = contraseña;

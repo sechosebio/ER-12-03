@@ -21,7 +21,17 @@ public class Persistencia {
         e3 = new Entrada(Calendar.getInstance(), "Entrada 3");
         Muro m1 = new Muro();
         m1.addEntrada(e1);m1.addEntrada(e2);m1.addEntrada(e3);
-        usuarios.add(new Usuario("Eduardo","Primer Apellido","Segundo Apellido","eduardo","", m1));
+        Usuario u1, u2, u3;
+        u1 = new Usuario("Eduardo","Primer Apellido","Segundo Apellido","eduardo","", m1);
+        u2 = new Usuario("Pepe","Primer Apellido","Segundo Apellido","pepe","", new Muro());
+        u3 = new Usuario("Javier","Primer Apellido","Segundo Apellido","javi","", new Muro());
+        u1.addAmigo(u2);
+        u2.addAmigo(u1);
+        u1.addAmigo(u3);
+        u3.addAmigo(u1);
+        usuarios.add(u1);
+        usuarios.add(u2);
+        usuarios.add(u3);
         
     }
     
