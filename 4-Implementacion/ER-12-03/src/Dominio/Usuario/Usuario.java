@@ -126,6 +126,10 @@ public class Usuario {
         return peticionesEnviadas;
     }
     
+    public List<Usuario> eliminarPeticionRecibida(Usuario usuario){
+        this.peticionesRecibidas.remove(usuario);
+        return peticionesRecibidas;
+    }
     public List<Usuario> rechazarPeticionAmistad(Usuario emisor){
         this.peticionesRecibidas.remove(emisor);
         return peticionesRecibidas;
