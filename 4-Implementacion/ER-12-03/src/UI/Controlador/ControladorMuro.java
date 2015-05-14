@@ -69,6 +69,7 @@ public class ControladorMuro {
                int destinatarioInt = vista.getSelectedUser();
                Usuario destinatario = gUsuarios.getUsuarios().get(destinatarioInt);
                gUsuarios.solicitarAmistad(usuario, destinatario);
+               vista.actualizar();
             }
         });
         

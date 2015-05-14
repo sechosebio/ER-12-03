@@ -135,6 +135,12 @@ public class Usuario {
         return peticionesRecibidas;
     }
     
+    public List<Usuario> amigosYPeticiones(){
+        List<Usuario> amigosYPeticiones = new ArrayList<Usuario>(amigos);
+        amigosYPeticiones.addAll(peticionesEnviadas);
+        return amigosYPeticiones;
+    }
+    
     public Usuario(String nombre, String primerApellido, String segundoapellido,String email, String contraseña) {
         this.email = email;
         this.contraseña = contraseña;

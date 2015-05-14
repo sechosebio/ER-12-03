@@ -21,10 +21,10 @@ public class Muro extends javax.swing.JFrame {
     /**
      * Creates new form Muro
      */
-    public Muro(final Dominio.Muro.Muro muro, final Usuario u, List<Usuario> usuarios) {
+    public Muro(final Dominio.Muro.Muro muro, final Usuario u, List<Usuario> usuariosNoAmigosNoPeticiones) {
         this.muro = muro;
         this.usuario = u;
-        this.usuarios = usuarios;
+        this.usuarios = usuariosNoAmigosNoPeticiones;
         initComponents();
         actualizar();
         

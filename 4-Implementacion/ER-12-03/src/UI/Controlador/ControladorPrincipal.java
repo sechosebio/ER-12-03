@@ -10,6 +10,7 @@ import UI.Interfaz.Principal;
 import UI.Interfaz.RegistroUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,7 +38,9 @@ public class ControladorPrincipal {
                     Usuario usuario = gUsuarios.obtenerPerfil(email);
                     Dominio.Muro.Muro muro = gUsuarios.obtenerMuro(usuario);
                     
-                    Muro m = new Muro(muro, usuario,gUsuarios.getUsuarios());
+                    List<Usuario> usuariosNoAmigos = gUsuarios.getUsuarios();
+                    usuariosNoAmigos.removeAll(usuario.amigosYPeticiones());
+                    Muro m = new Muro(muro, usuario,usuariosNoAmigos);
                     m.setVisible(true);
                     new ControladorMuro(m, usuario, gUsuarios, gEntradas);
                     Perfil perfil = new Perfil(gUsuarios.obtenerPerfil(email));
