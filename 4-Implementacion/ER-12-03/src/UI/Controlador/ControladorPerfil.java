@@ -10,7 +10,7 @@ import UI.Interfaz.Perfil;
  */
 public class ControladorPerfil {
 
-    public ControladorPerfil(Perfil vista, Persistencia persistencia) {
+    public ControladorPerfil(Perfil vista) {
     }
 
 }

@@ -1,5 +1,7 @@
 package UI.Controlador;
 
+import Dominio.Usuario.GestorUsuarios;
+import Dominio.Usuario.Usuario;
 import ServiciosTecnicos.Persistencia.Persistencia;
 import UI.Interfaz.Muro;
 import UI.Interfaz.Perfil;
@@ -16,12 +18,12 @@ import javax.swing.JOptionPane;
 public class ControladorPrincipal {
     
     Principal vista;
-    Persistencia persistencia;
+    GestorUsuarios gUsuarios;
     Muro muro;
 
-    public ControladorPrincipal(Principal ventanaPrincipal, final Persistencia persistencia) {
+    public ControladorPrincipal(Principal ventanaPrincipal, final GestorUsuarios gUsuarios) {
         this.vista = ventanaPrincipal;
-        this.persistencia = persistencia;
+        this.gUsuarios = gUsuarios;
         this.muro = muro;
         
         vista.setIniciarSesionListener(new ActionListener() {
@@ -30,12 +32,14 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 String email = vista.getEmail();
                  
-                if(persistencia.existeUsuario(email)){
-                    Dominio.Muro.Muro muro = persistencia.getUser(email).getMuro();
-                    Muro m= new Muro(muro);
+                if(gUsuarios.existeUsuario(email)){
+                    Usuario usuario = gUsuarios.obtenerPerfil(email);
+                    Dominio.Muro.Muro muro = gUsuarios.obtenerMuro(usuario);
+                    
+                    Muro m = new Muro(muro);
                     m.setVisible(true);
-                    new ControladorMuro(m, persistencia, muro);
-                    Perfil perfil = new Perfil(persistencia.getUser(email));
+                    new ControladorMuro(m, muro);
+                    Perfil perfil = new Perfil(gUsuarios.obtenerPerfil(email));
                     perfil.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(vista, "Usuario no existe");
@@ -50,7 +54,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 RegistroUsuario vntRegistroUsuario = new RegistroUsuario();
                 vntRegistroUsuario.setVisible(true);
-                new ControladorRegistroUsuario(vntRegistroUsuario, persistencia);
+                new ControladorRegistroUsuario(vntRegistroUsuario, gUsuarios);
             }
         });
         

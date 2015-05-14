@@ -1,6 +1,7 @@
 package UI.Controlador;
 
 import Dominio.Muro.Muro;
+import Dominio.Usuario.GestorUsuarios;
 import Dominio.Usuario.Usuario;
 import ServiciosTecnicos.Persistencia.Persistencia;
 import UI.Interfaz.Perfil;
@@ -17,7 +18,7 @@ public class ControladorRegistroUsuario {
     Usuario usuario;
     RegistroUsuario vista;
 
-    ControladorRegistroUsuario(final RegistroUsuario vista, final Persistencia persistencia) {
+    ControladorRegistroUsuario(final RegistroUsuario vista, final GestorUsuarios gUsuarios) {
         this.usuario = usuario;
         this.vista = vista;
         
@@ -29,12 +30,11 @@ public class ControladorRegistroUsuario {
                String sgApellido = vista.getSegundApellido();
                String email = vista.getEmail();
                String pass = vista.getContrasena();
-               usuario = new Usuario(nombre,prApellido,sgApellido,email,pass, new Muro());
-               persistencia.addUser(usuario);
+               gUsuarios.registrarUsuario(nombre, prApellido, sgApellido, email, nombre);
                vista.dispose();
                Perfil perfil = new Perfil(usuario);
                perfil.setVisible(true);
-               new ControladorPerfil(perfil, persistencia);
+               new ControladorPerfil(perfil);
             }
         });
     }

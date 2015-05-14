@@ -20,7 +20,9 @@ public class Usuario {
     private double dinero;
     
     private Muro muro;
-    private List<Usuario> amigos = new ArrayList<>();
+    private List<Usuario> amigos = new ArrayList<Usuario>();
+    private List<Usuario> peticionesEnviadas = new ArrayList<Usuario>();
+    private List<Usuario> peticionesRecibidas = new ArrayList<Usuario>();
 
     public Muro getMuro() {
         return muro;
@@ -94,15 +96,29 @@ public class Usuario {
         amigos.add(amigo);
     }
     
+    private List<Usuario> recibirPeticionAmistad(Usuario emisor){
+        this.peticionesRecibidas.add(emisor);
+        return peticionesRecibidas;
+    }
     
-
-    public Usuario(String nombre, String primerApellido, String segundoapellido,String email, String contraseña, Muro muro) {
+    public List<Usuario> enviarPeticionAmistad(Usuario amigo){
+        this.peticionesEnviadas.add(amigo);
+        this.recibirPeticionAmistad(this);
+        return peticionesEnviadas;
+    }
+    
+    public List<Usuario> rechazarPeticionAmistad(Usuario emisor){
+        this.peticionesRecibidas.remove(emisor);
+        return peticionesRecibidas;
+    }
+    
+    public Usuario(String nombre, String primerApellido, String segundoapellido,String email, String contraseña) {
         this.email = email;
         this.contraseña = contraseña;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoapellido = segundoapellido;
-        this.muro = muro;
+        this.muro = new Muro();
     }
     
     

@@ -14,7 +14,7 @@ import java.util.Calendar;
  */
 public class ControladorMuro {
 
-    public ControladorMuro(final Muro vista, final Persistencia persistencia, final Dominio.Muro.Muro muro) {
+    public ControladorMuro(final Muro vista, final Dominio.Muro.Muro muro) {
         
         vista.setPublicarListener(new ActionListener() {
             @Override
