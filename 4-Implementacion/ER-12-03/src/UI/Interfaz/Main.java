@@ -22,7 +22,7 @@ public class Main {
         final Principal principal  = new Principal();
         GestorUsuarios gUsuarios = new GestorUsuarios();
         GestorEntradas gEntradas = new GestorEntradas();
-        ControladorPrincipal ctrlPrin = new ControladorPrincipal(principal,gUsuarios);
+        ControladorPrincipal ctrlPrin = new ControladorPrincipal(principal, gUsuarios, gEntradas);
         
         //Cargar datos fake
         Usuario u1 = gUsuarios.registrarUsuario("Eduardo","Primer Apellido","Segundo Apellido","eduardo","");

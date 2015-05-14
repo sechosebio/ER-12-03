@@ -1,5 +1,6 @@
 package UI.Controlador;
 
+import Dominio.Muro.GestorEntradas;
 import Dominio.Usuario.GestorUsuarios;
 import Dominio.Usuario.Usuario;
 import ServiciosTecnicos.Persistencia.Persistencia;
@@ -21,7 +22,7 @@ public class ControladorPrincipal {
     GestorUsuarios gUsuarios;
     Muro muro;
 
-    public ControladorPrincipal(Principal ventanaPrincipal, final GestorUsuarios gUsuarios) {
+    public ControladorPrincipal(Principal ventanaPrincipal, final GestorUsuarios gUsuarios, final GestorEntradas gEntradas) {
         this.vista = ventanaPrincipal;
         this.gUsuarios = gUsuarios;
         this.muro = muro;
@@ -38,7 +39,7 @@ public class ControladorPrincipal {
                     
                     Muro m = new Muro(muro, usuario);
                     m.setVisible(true);
-                    new ControladorMuro(m, muro);
+                    new ControladorMuro(m, usuario, gUsuarios, gEntradas);
                     Perfil perfil = new Perfil(gUsuarios.obtenerPerfil(email));
                     perfil.setVisible(true);
                 }else{

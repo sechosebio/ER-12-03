@@ -47,6 +47,7 @@ public class GestorUsuarios {
     public void aceptarAmistad(Usuario invitado, Usuario invitador){
         invitado.addAmigo(invitador);
         invitador.addAmigo(invitado);
+        invitado.rechazarPeticionAmistad(invitador);
     }
     /**
      * Método para rechazar una petición de amistad
