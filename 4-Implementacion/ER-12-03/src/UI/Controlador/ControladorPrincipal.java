@@ -36,7 +36,7 @@ public class ControladorPrincipal {
                     Usuario usuario = gUsuarios.obtenerPerfil(email);
                     Dominio.Muro.Muro muro = gUsuarios.obtenerMuro(usuario);
                     
-                    Muro m = new Muro(muro);
+                    Muro m = new Muro(muro, usuario);
                     m.setVisible(true);
                     new ControladorMuro(m, muro);
                     Perfil perfil = new Perfil(gUsuarios.obtenerPerfil(email));

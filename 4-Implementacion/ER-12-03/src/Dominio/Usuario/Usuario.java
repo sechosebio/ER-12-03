@@ -92,6 +92,24 @@ public class Usuario {
         return amigos;
     }
 
+    public List<Usuario> getPeticionesEnviadas() {
+        return peticionesEnviadas;
+    }
+
+    public void setPeticionesEnviadas(List<Usuario> peticionesEnviadas) {
+        this.peticionesEnviadas = peticionesEnviadas;
+    }
+
+    public List<Usuario> getPeticionesRecibidas() {
+        System.out.println("Peticiones recibidas" + peticionesRecibidas.size());
+        return peticionesRecibidas;
+    }
+
+    public void setPeticionesRecibidas(List<Usuario> peticionesRecibidas) {
+        this.peticionesRecibidas = peticionesRecibidas;
+    }
+    
+    
     public void addAmigo(Usuario amigo) {
         amigos.add(amigo);
     }
@@ -102,8 +120,9 @@ public class Usuario {
     }
     
     public List<Usuario> enviarPeticionAmistad(Usuario amigo){
+        System.out.println(this.getNombre() + "envia petición a " + amigo.getNombre());
         this.peticionesEnviadas.add(amigo);
-        this.recibirPeticionAmistad(this);
+        amigo.recibirPeticionAmistad(this);
         return peticionesEnviadas;
     }
     

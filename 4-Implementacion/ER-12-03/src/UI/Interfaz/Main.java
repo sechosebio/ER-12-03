@@ -28,8 +28,10 @@ public class Main {
         Usuario u1 = gUsuarios.registrarUsuario("Eduardo","Primer Apellido","Segundo Apellido","eduardo","");
         Usuario u2 = gUsuarios.registrarUsuario("Pepe","Primer Apellido","Segundo Apellido","pepe","");
         Usuario u3 = gUsuarios.registrarUsuario("Javier","Primer Apellido","Segundo Apellido","javi","");
+        Usuario u4 = gUsuarios.registrarUsuario("Pablo","Primer Apellido","Segundo Apellido","pablo","");
         gUsuarios.aceptarAmistad(u1,u2);
-        gUsuarios.aceptarAmistad(u1,u3);
+        gUsuarios.aceptarAmistad(u1,u4);
+        gUsuarios.solicitarAmistad(u3, u1);
         gEntradas.publicarEntrada(u1.getMuro(), u1, "Hola esto es fake");
         gEntradas.publicarEntrada(u1.getMuro(), u1, "Hola esto es fake 2");
         gEntradas.publicarEntrada(u1.getMuro(), u1, "Hola esto es fake  3");

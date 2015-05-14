@@ -1,9 +1,11 @@
 package UI.Interfaz;
 
 import Dominio.Muro.Entrada;
+import Dominio.Usuario.Usuario;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.AbstractListModel;
+import javax.swing.ListModel;
 
 /**
  *
@@ -13,14 +15,17 @@ public class Muro extends javax.swing.JFrame {
 
     
     Dominio.Muro.Muro muro;
+    Usuario usuario;
     
     /**
      * Creates new form Muro
      */
-    public Muro(final Dominio.Muro.Muro muro) {
+    public Muro(final Dominio.Muro.Muro muro, final Usuario u) {
         this.muro = muro;
+        this.usuario = u;
         initComponents();
         actualizar();
+        
     }
     
     public final void actualizar(){
@@ -37,6 +42,34 @@ public class Muro extends javax.swing.JFrame {
                 return entradas.get(index).getContenido() + "  " + entradas.get(index).getFecha().getTime().toString();
             }
         });
+        peticionesAmistad.setModel(new AbstractListModel() {
+            List<Usuario> usuarios = usuario.getPeticionesRecibidas();
+            
+            @Override
+            public int getSize() {
+               return usuarios.size();
+            }
+
+            @Override
+            public Object getElementAt(int index) {
+                return usuarios.get(index).getNombre() + " " + usuarios.get(index).getPrimerApellido();
+            }
+        
+        });
+        listaAmigos.setModel(new AbstractListModel(){
+            List<Usuario> usuarios = usuario.getAmigos();
+            
+            @Override
+            public int getSize() {
+               return usuarios.size();
+            }
+
+            @Override
+            public Object getElementAt(int index) {
+                return usuarios.get(index).getNombre() + " " + usuarios.get(index).getPrimerApellido();
+            }
+        });
+        
     }
 
     /**
@@ -54,13 +87,16 @@ public class Muro extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jScrollPane4 = new javax.swing.JScrollPane();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        peticionesAmistad = new javax.swing.JList();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        listaAmigos = new javax.swing.JList();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listaUsuarios = new javax.swing.JList();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -83,6 +119,12 @@ public class Muro extends javax.swing.JFrame {
         jButton1.setText("Publicar");
 
         jLabel5.setText("Peticiones de amistad");
+
+        jScrollPane5.setViewportView(peticionesAmistad);
+
+        jScrollPane6.setViewportView(listaAmigos);
+
+        jScrollPane3.setViewportView(listaUsuarios);
 
         jMenu1.setText("Archivo");
 
@@ -109,30 +151,22 @@ public class Muro extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane5)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(46, 46, 46))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(88, 88, 88)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(0, 79, Short.MAX_VALUE))
-                            .addComponent(jScrollPane4)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -154,16 +188,16 @@ public class Muro extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                            .addComponent(jScrollPane6)))
                     .addComponent(jScrollPane1))
                 .addGap(21, 21, 21))
         );
@@ -199,8 +233,11 @@ public String getContenido(){
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JList listaAmigos;
+    private javax.swing.JList listaUsuarios;
+    private javax.swing.JList peticionesAmistad;
     // End of variables declaration//GEN-END:variables
 }
