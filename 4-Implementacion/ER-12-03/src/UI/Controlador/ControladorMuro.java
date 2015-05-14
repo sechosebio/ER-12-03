@@ -41,6 +41,16 @@ public class ControladorMuro {
             }
         });
         
+         vista.setRechazarPeticion(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               Usuario remitente = vista.getSelectedUserPeticiones();
+               gUsuarios.rechazarAmistad(usuario, remitente);
+               vista.actualizar();
+            }
+        });
+         
         vista.setVerPerfilListener(new ActionListener() {
 
             @Override
@@ -51,6 +61,8 @@ public class ControladorMuro {
                 p.setVisible(true);
             }
         });
+        
+       
     }
     
 }
