@@ -16,19 +16,33 @@ public class Muro extends javax.swing.JFrame {
     
     Dominio.Muro.Muro muro;
     Usuario usuario;
+    List<Usuario> usuarios;
     
     /**
      * Creates new form Muro
      */
-    public Muro(final Dominio.Muro.Muro muro, final Usuario u) {
+    public Muro(final Dominio.Muro.Muro muro, final Usuario u, List<Usuario> usuarios) {
         this.muro = muro;
         this.usuario = u;
+        this.usuarios = usuarios;
         initComponents();
         actualizar();
         
     }
     
     public final void actualizar(){
+        listaUsuarios.setModel(new AbstractListModel() {
+
+            @Override
+            public int getSize() {
+                return usuarios.size();
+            }
+
+            @Override
+            public Object getElementAt(int index) {
+                return usuarios.get(index).getNombre() + " " + usuarios.get(index).getPrimerApellido();
+            }
+        });
         jList1.setModel(new AbstractListModel() {
 
             List<Entrada> entradas = muro.getEntradas();
@@ -100,6 +114,7 @@ public class Muro extends javax.swing.JFrame {
         botonAceptarAmistad = new javax.swing.JButton();
         botonVerPerfil = new javax.swing.JButton();
         botonRechazarAmistad = new javax.swing.JButton();
+        botonEnviarPeticion = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -135,6 +150,8 @@ public class Muro extends javax.swing.JFrame {
         botonVerPerfil.setText("Ver Perfil");
 
         botonRechazarAmistad.setText("Rechazar amistad");
+
+        botonEnviarPeticion.setText("Enviar petición");
 
         jMenu1.setText("Archivo");
 
@@ -178,7 +195,10 @@ public class Muro extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jScrollPane3)))
+                            .addComponent(jScrollPane3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(botonEnviarPeticion))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(botonRechazarAmistad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -220,7 +240,9 @@ public class Muro extends javax.swing.JFrame {
                             .addComponent(jScrollPane6)))
                     .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonVerPerfil))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonVerPerfil)
+                    .addComponent(botonEnviarPeticion)))
         );
 
         pack();
@@ -246,6 +268,10 @@ public class Muro extends javax.swing.JFrame {
     public Usuario getSelectedUserPeticiones(){
         return usuario.getPeticionesRecibidas().get(peticionesAmistad.getSelectedIndex());
     }
+    
+    public int getSelectedUser(){
+        return listaUsuarios.getSelectedIndex();
+    }
 
     public void setVerPerfilListener(ActionListener al){
         botonVerPerfil.addActionListener(al);
@@ -255,12 +281,16 @@ public class Muro extends javax.swing.JFrame {
         botonRechazarAmistad.addActionListener(al);
     }
 
+    public void setEnviarPeticion(ActionListener al){
+        botonEnviarPeticion.addActionListener(al);
+    }
     public Usuario getSelectedUserAmigos(){
         return usuario.getAmigos().get(listaAmigos.getSelectedIndex());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptarAmistad;
+    private javax.swing.JButton botonEnviarPeticion;
     private javax.swing.JButton botonRechazarAmistad;
     private javax.swing.JButton botonVerPerfil;
     private javax.swing.JButton jButton1;

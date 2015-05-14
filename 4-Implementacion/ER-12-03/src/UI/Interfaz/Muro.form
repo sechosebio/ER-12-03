@@ -76,6 +76,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="botonEnviarPeticion" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -130,7 +134,10 @@
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="botonVerPerfil" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="botonVerPerfil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonEnviarPeticion" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -255,6 +262,11 @@
     <Component class="javax.swing.JButton" name="botonRechazarAmistad">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rechazar amistad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botonEnviarPeticion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Enviar petici&#xf3;n"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -13,7 +13,13 @@ public class GestorUsuarios {
     GestorEntradas gEntradas = new GestorEntradas();
     Persistencia persistencia = new Persistencia();
     
-    
+    /**
+     * Método para obtener los usuarios de la red social
+     * @return Lista de todos los usuarios de la red social
+     */
+    public List<Usuario> getUsuarios(){
+        return persistencia.getUsuarios();
+    }
     /**
      * Método para registrar un usuario en el sistema
      * @param nombre Nombre del usuario

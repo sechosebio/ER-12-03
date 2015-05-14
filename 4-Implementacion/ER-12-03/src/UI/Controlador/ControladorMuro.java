@@ -62,6 +62,16 @@ public class ControladorMuro {
             }
         });
         
+        vista.setEnviarPeticion(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               int destinatarioInt = vista.getSelectedUser();
+               Usuario destinatario = gUsuarios.getUsuarios().get(destinatarioInt);
+               gUsuarios.solicitarAmistad(usuario, destinatario);
+            }
+        });
+        
        
     }
     
