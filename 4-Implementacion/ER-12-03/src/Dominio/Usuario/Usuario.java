@@ -138,6 +138,7 @@ public class Usuario {
     public List<Usuario> amigosYPeticiones(){
         List<Usuario> amigosYPeticiones = new ArrayList<Usuario>(amigos);
         amigosYPeticiones.addAll(peticionesEnviadas);
+        amigosYPeticiones.addAll(peticionesRecibidas);
         return amigosYPeticiones;
     }
     

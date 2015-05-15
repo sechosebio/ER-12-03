@@ -39,8 +39,7 @@ public class ControladorPrincipal {
                     Dominio.Muro.Muro muro = gUsuarios.obtenerMuro(usuario);
                     
                     List<Usuario> usuariosNoAmigos = gUsuarios.getUsuarios();
-                    usuariosNoAmigos.removeAll(usuario.amigosYPeticiones());
-                    Muro m = new Muro(muro, usuario,usuariosNoAmigos);
+                    Muro m = new Muro(usuario,usuariosNoAmigos);
                     m.setVisible(true);
                     new ControladorMuro(m, usuario, gUsuarios, gEntradas);
                     Perfil perfil = new Perfil(gUsuarios.obtenerPerfil(email));

@@ -3,6 +3,7 @@ package UI.Interfaz;
 import Dominio.Muro.Entrada;
 import Dominio.Usuario.Usuario;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.AbstractListModel;
 import javax.swing.ListModel;
@@ -21,8 +22,8 @@ public class Muro extends javax.swing.JFrame {
     /**
      * Creates new form Muro
      */
-    public Muro(final Dominio.Muro.Muro muro, final Usuario u, List<Usuario> usuariosNoAmigosNoPeticiones) {
-        this.muro = muro;
+    public Muro(final Usuario u, List<Usuario> usuariosNoAmigosNoPeticiones) {
+        this.muro = u.getMuro();
         this.usuario = u;
         this.usuarios = usuariosNoAmigosNoPeticiones;
         initComponents();
@@ -30,17 +31,26 @@ public class Muro extends javax.swing.JFrame {
         
     }
     
+    public List<Usuario> getUsuariosRestantes(){
+        List<Usuario> usuariosRestantes = new ArrayList<>(usuarios);
+        usuariosRestantes.removeAll(usuario.amigosYPeticiones());
+        usuariosRestantes.remove(usuario);
+        return usuariosRestantes;
+    }
+    
     public final void actualizar(){
+        
         listaUsuarios.setModel(new AbstractListModel() {
 
+            List<Usuario> usuariosRestantes = getUsuariosRestantes();
             @Override
             public int getSize() {
-                return usuarios.size();
+                return usuariosRestantes.size();
             }
 
             @Override
             public Object getElementAt(int index) {
-                return usuarios.get(index).getNombre() + " " + usuarios.get(index).getPrimerApellido();
+                return usuariosRestantes.get(index).getNombre() + " " + usuariosRestantes.get(index).getPrimerApellido();
             }
         });
         jList1.setModel(new AbstractListModel() {
@@ -115,6 +125,7 @@ public class Muro extends javax.swing.JFrame {
         botonVerPerfil = new javax.swing.JButton();
         botonRechazarAmistad = new javax.swing.JButton();
         botonEnviarPeticion = new javax.swing.JButton();
+        botonVerUsuario = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -153,6 +164,8 @@ public class Muro extends javax.swing.JFrame {
 
         botonEnviarPeticion.setText("Enviar petición");
 
+        botonVerUsuario.setText("Ver Perfil");
+
         jMenu1.setText("Archivo");
 
         jMenuItem1.setText("Cerrar sesión");
@@ -186,18 +199,20 @@ public class Muro extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botonVerPerfil)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonVerPerfil))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jScrollPane3)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(botonVerUsuario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(botonEnviarPeticion))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(botonRechazarAmistad)
@@ -242,7 +257,8 @@ public class Muro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVerPerfil)
-                    .addComponent(botonEnviarPeticion)))
+                    .addComponent(botonEnviarPeticion)
+                    .addComponent(botonVerUsuario)))
         );
 
         pack();
@@ -287,12 +303,17 @@ public class Muro extends javax.swing.JFrame {
     public Usuario getSelectedUserAmigos(){
         return usuario.getAmigos().get(listaAmigos.getSelectedIndex());
     }
+    
+    public void setVerUsuarioListener(ActionListener al){
+        botonVerUsuario.addActionListener(al);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptarAmistad;
     private javax.swing.JButton botonEnviarPeticion;
     private javax.swing.JButton botonRechazarAmistad;
     private javax.swing.JButton botonVerPerfil;
+    private javax.swing.JButton botonVerUsuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

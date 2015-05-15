@@ -67,12 +67,23 @@ public class ControladorMuro {
             @Override
             public void actionPerformed(ActionEvent e) {
                int destinatarioInt = vista.getSelectedUser();
-               Usuario destinatario = gUsuarios.getUsuarios().get(destinatarioInt);
+               Usuario destinatario = vista.getUsuariosRestantes().get(destinatarioInt);
                gUsuarios.solicitarAmistad(usuario, destinatario);
                vista.actualizar();
             }
         });
         
+        vista.setVerUsuarioListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               int destinatarioInt = vista.getSelectedUser();
+               Usuario destinatario = vista.getUsuariosRestantes().get(destinatarioInt);
+               Perfil p = new Perfil(destinatario);
+               new ControladorPerfil(p);
+               p.setVisible(true);
+            }
+        });
        
     }
     

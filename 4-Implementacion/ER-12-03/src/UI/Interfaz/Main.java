@@ -29,6 +29,8 @@ public class Main {
         Usuario u2 = gUsuarios.registrarUsuario("Pepe","Primer Apellido","Segundo Apellido","pepe","");
         Usuario u3 = gUsuarios.registrarUsuario("Javier","Primer Apellido","Segundo Apellido","javi","");
         Usuario u4 = gUsuarios.registrarUsuario("Pablo","Primer Apellido","Segundo Apellido","pablo","");
+        Usuario u5 = gUsuarios.registrarUsuario("Jose","Pérez","Segundo Apellido","jose","");
+        Usuario u6 = gUsuarios.registrarUsuario("Lucas","Pérez","Segundo Apellido","lucas","");
         gUsuarios.aceptarAmistad(u1,u2);
         gUsuarios.aceptarAmistad(u1,u4);
         gUsuarios.solicitarAmistad(u3, u1);
