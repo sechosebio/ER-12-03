@@ -2,6 +2,7 @@ package UI.Interfaz;
 
 import Dominio.Muro.Entrada;
 import Dominio.Usuario.Usuario;
+import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.AbstractListModel;
 
@@ -51,7 +52,7 @@ public class Perfil extends javax.swing.JFrame {
 
             @Override
             public Object getElementAt(int index) {
-                return entradas.get(index).getContenido() + "  " + entradas.get(index).getFecha().getTime().toString();
+                return entradas.get(index).getFormattedContent();
             }
         });
     }
@@ -78,6 +79,7 @@ public class Perfil extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
+        botonVerPerfil = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList();
@@ -156,13 +158,17 @@ public class Perfil extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
+        botonVerPerfil.setText("Ver Perfil");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonVerPerfil)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -170,7 +176,9 @@ public class Perfil extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonVerPerfil)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Amigos", jPanel2);
@@ -215,9 +223,16 @@ public class Perfil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setVerPerfilListener(ActionListener al){
+        botonVerPerfil.addActionListener(al);
+    }
     
+    public Usuario getSelectedUserAmigos(){
+        return perfil.getAmigos().get(jList1.getSelectedIndex());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonVerPerfil;
     private javax.swing.JLabel email;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

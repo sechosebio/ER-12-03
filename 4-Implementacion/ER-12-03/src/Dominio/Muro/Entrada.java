@@ -1,6 +1,7 @@
 package Dominio.Muro;
 
 import Dominio.Usuario.Usuario;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -61,5 +62,10 @@ public class Entrada {
         this.autor = autor;
     }
     
+    public String getFormattedContent() {
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm dd/MM/yy");
+        return contenido + "   " + df.format(fecha.getTime());
+        
+    }
     
 }

@@ -3,7 +3,6 @@ package UI.Controlador;
 import Dominio.Muro.GestorEntradas;
 import Dominio.Usuario.GestorUsuarios;
 import Dominio.Usuario.Usuario;
-import ServiciosTecnicos.Persistencia.Persistencia;
 import UI.Interfaz.Muro;
 import UI.Interfaz.Perfil;
 import UI.Interfaz.Principal;
@@ -36,14 +35,11 @@ public class ControladorPrincipal {
                  
                 if(gUsuarios.existeUsuario(email)){
                     Usuario usuario = gUsuarios.obtenerPerfil(email);
-                    Dominio.Muro.Muro muro = gUsuarios.obtenerMuro(usuario);
                     
-                    List<Usuario> usuariosNoAmigos = gUsuarios.getUsuarios();
-                    Muro m = new Muro(usuario,usuariosNoAmigos);
+                    List<Usuario> todosUsuarios = gUsuarios.getUsuarios();
+                    Muro m = new Muro(usuario,todosUsuarios);
                     m.setVisible(true);
                     new ControladorMuro(m, usuario, gUsuarios, gEntradas);
-                    Perfil perfil = new Perfil(gUsuarios.obtenerPerfil(email));
-                    perfil.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(vista, "Usuario no existe");
                     System.out.println("No existe");
@@ -57,7 +53,7 @@ public class ControladorPrincipal {
             public void actionPerformed(ActionEvent e) {
                 RegistroUsuario vntRegistroUsuario = new RegistroUsuario();
                 vntRegistroUsuario.setVisible(true);
-                new ControladorRegistroUsuario(vntRegistroUsuario, gUsuarios);
+                new ControladorRegistroUsuario(vntRegistroUsuario, gUsuarios, gEntradas);
             }
         });
         

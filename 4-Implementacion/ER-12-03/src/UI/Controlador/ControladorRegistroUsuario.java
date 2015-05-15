@@ -1,5 +1,6 @@
 package UI.Controlador;
 
+import Dominio.Muro.GestorEntradas;
 import Dominio.Muro.Muro;
 import Dominio.Usuario.GestorUsuarios;
 import Dominio.Usuario.Usuario;
@@ -8,6 +9,7 @@ import UI.Interfaz.Perfil;
 import UI.Interfaz.RegistroUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 /**
  *
@@ -18,7 +20,8 @@ public class ControladorRegistroUsuario {
     Usuario usuario;
     RegistroUsuario vista;
 
-    ControladorRegistroUsuario(final RegistroUsuario vista, final GestorUsuarios gUsuarios) {
+    ControladorRegistroUsuario(final RegistroUsuario vista, 
+            final GestorUsuarios gUsuarios, final GestorEntradas gEntradas) {
         this.usuario = usuario;
         this.vista = vista;
         
@@ -30,11 +33,12 @@ public class ControladorRegistroUsuario {
                String sgApellido = vista.getSegundApellido();
                String email = vista.getEmail();
                String pass = vista.getContrasena();
-               gUsuarios.registrarUsuario(nombre, prApellido, sgApellido, email, nombre);
+               usuario = gUsuarios.registrarUsuario(nombre, prApellido, sgApellido, email, nombre);
                vista.dispose();
-               Perfil perfil = new Perfil(usuario);
-               perfil.setVisible(true);
-               new ControladorPerfil(perfil);
+               List<Usuario> todosUsuarios = gUsuarios.getUsuarios();
+               UI.Interfaz.Muro m = new UI.Interfaz.Muro(usuario,todosUsuarios);
+               m.setVisible(true);
+               new ControladorMuro(m, usuario, gUsuarios, gEntradas);
             }
         });
     }

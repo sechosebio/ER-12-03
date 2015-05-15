@@ -40,6 +40,7 @@ public class Muro extends javax.swing.JFrame {
     
     public final void actualizar(){
         
+        nombreUsuario.setText(usuario.getNombre());
         listaUsuarios.setModel(new AbstractListModel() {
 
             List<Usuario> usuariosRestantes = getUsuariosRestantes();
@@ -63,7 +64,7 @@ public class Muro extends javax.swing.JFrame {
 
             @Override
             public Object getElementAt(int index) {
-                return entradas.get(index).getContenido() + "  " + entradas.get(index).getFecha().getTime().toString();
+                return entradas.get(index).getFormattedContent();
             }
         });
         peticionesAmistad.setModel(new AbstractListModel() {
@@ -126,6 +127,7 @@ public class Muro extends javax.swing.JFrame {
         botonRechazarAmistad = new javax.swing.JButton();
         botonEnviarPeticion = new javax.swing.JButton();
         botonVerUsuario = new javax.swing.JButton();
+        nombreUsuario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -166,6 +168,8 @@ public class Muro extends javax.swing.JFrame {
 
         botonVerUsuario.setText("Ver Perfil");
 
+        nombreUsuario.setText("Nombre Usuario");
+
         jMenu1.setText("Archivo");
 
         jMenuItem1.setText("Cerrar sesión");
@@ -192,9 +196,6 @@ public class Muro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
                     .addComponent(jScrollPane5)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1))
@@ -217,7 +218,12 @@ public class Muro extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(botonRechazarAmistad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonAceptarAmistad)))
+                        .addComponent(botonAceptarAmistad))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(nombreUsuario))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -230,11 +236,14 @@ public class Muro extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(nombreUsuario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -333,6 +342,7 @@ public class Muro extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JList listaAmigos;
     private javax.swing.JList listaUsuarios;
+    private javax.swing.JLabel nombreUsuario;
     private javax.swing.JList peticionesAmistad;
     // End of variables declaration//GEN-END:variables
 }
