@@ -1,16 +1,13 @@
 
 package UI.Controlador;
 
-import Dominio.Muro.Entrada;
 import Dominio.Muro.GestorEntradas;
 import Dominio.Usuario.GestorUsuarios;
 import Dominio.Usuario.Usuario;
-import ServiciosTecnicos.Persistencia.Persistencia;
 import UI.Interfaz.Muro;
 import UI.Interfaz.Perfil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Calendar;
 
 /**
  *
