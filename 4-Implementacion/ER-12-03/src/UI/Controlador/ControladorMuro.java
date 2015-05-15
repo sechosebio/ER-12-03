@@ -24,7 +24,6 @@ public class ControladorMuro {
                
                String contenido = vista.getContenido();
                gEntradas.publicarEntrada(usuario.getMuro(), usuario, contenido);
-               vista.actualizar();
             }
         });
         
@@ -34,7 +33,6 @@ public class ControladorMuro {
             public void actionPerformed(ActionEvent e) {
                 Usuario remitente = vista.getSelectedUserPeticiones();
                 gUsuarios.aceptarAmistad(usuario, remitente);
-                vista.actualizar();
             }
         });
         
@@ -44,7 +42,6 @@ public class ControladorMuro {
             public void actionPerformed(ActionEvent e) {
                Usuario remitente = vista.getSelectedUserPeticiones();
                gUsuarios.rechazarAmistad(usuario, remitente);
-               vista.actualizar();
             }
         });
          
@@ -66,7 +63,6 @@ public class ControladorMuro {
                int destinatarioInt = vista.getSelectedUser();
                Usuario destinatario = vista.getUsuariosRestantes().get(destinatarioInt);
                gUsuarios.solicitarAmistad(usuario, destinatario);
-               vista.actualizar();
             }
         });
         

@@ -10,7 +10,7 @@ import javax.swing.AbstractListModel;
  *
  * @author Pablo Paz (pablo.paz)
  */
-public class Perfil extends javax.swing.JFrame {
+public class Perfil extends javax.swing.JFrame implements Observador{
 
     Usuario perfil;
     
@@ -20,9 +20,11 @@ public class Perfil extends javax.swing.JFrame {
     public Perfil(Usuario perfil) {
         this.perfil = perfil;
         initComponents();
-        actualizar();
+        perfil.registrarObservador(this);
+        perfil.getMuro().registrarObservador(this);
     }
     
+    @Override
     public void actualizar(){
         nombre.setText(perfil.getNombre());
         primerApellido.setText(perfil.getPrimerApellido());

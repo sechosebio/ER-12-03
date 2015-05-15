@@ -1,6 +1,7 @@
 package Dominio.Muro;
 
 import Dominio.Usuario.Usuario;
+import UI.Interfaz.Observador;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,8 @@ public class Muro {
     private Usuario dueno;
     
     private List<Entrada> entradas = new ArrayList<>();
+    
+    private List<Observador> escuchadores = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -37,5 +40,21 @@ public class Muro {
     
     public void addEntrada(Entrada e){
         entradas.add(e);
+        actualizarObservadores();
+    }
+    
+    public void registrarObservador(Observador o){
+        escuchadores.add(o);
+        o.actualizar();
+    }
+    
+    public void eliminarObservador(Observador o){
+        escuchadores.remove(o);
+    }
+    
+    private void actualizarObservadores(){
+        for (Observador o : escuchadores) {
+            o.actualizar();
+        }
     }
 }

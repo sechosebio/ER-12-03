@@ -2,6 +2,7 @@
 package Dominio.Usuario;
 
 import Dominio.Muro.Muro;
+import UI.Interfaz.Observador;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,8 @@ public class Usuario {
     private List<Usuario> amigos = new ArrayList<Usuario>();
     private List<Usuario> peticionesEnviadas = new ArrayList<Usuario>();
     private List<Usuario> peticionesRecibidas = new ArrayList<Usuario>();
+    
+    private List<Observador> escuchadores = new ArrayList<>();
 
     public Muro getMuro() {
         return muro;
@@ -98,6 +101,7 @@ public class Usuario {
 
     public void setPeticionesEnviadas(List<Usuario> peticionesEnviadas) {
         this.peticionesEnviadas = peticionesEnviadas;
+        actualizarObservadores();
     }
 
     public List<Usuario> getPeticionesRecibidas() {
@@ -107,15 +111,18 @@ public class Usuario {
 
     public void setPeticionesRecibidas(List<Usuario> peticionesRecibidas) {
         this.peticionesRecibidas = peticionesRecibidas;
+        actualizarObservadores();
     }
     
     
     public void addAmigo(Usuario amigo) {
         amigos.add(amigo);
+        actualizarObservadores();
     }
     
     private List<Usuario> recibirPeticionAmistad(Usuario emisor){
         this.peticionesRecibidas.add(emisor);
+        actualizarObservadores();
         return peticionesRecibidas;
     }
     
@@ -123,15 +130,18 @@ public class Usuario {
         System.out.println(this.getNombre() + "envia petición a " + amigo.getNombre());
         this.peticionesEnviadas.add(amigo);
         amigo.recibirPeticionAmistad(this);
+        actualizarObservadores();
         return peticionesEnviadas;
     }
     
     public List<Usuario> eliminarPeticionRecibida(Usuario usuario){
         this.peticionesRecibidas.remove(usuario);
+        actualizarObservadores();
         return peticionesRecibidas;
     }
     public List<Usuario> rechazarPeticionAmistad(Usuario emisor){
         this.peticionesRecibidas.remove(emisor);
+        actualizarObservadores();
         return peticionesRecibidas;
     }
     
@@ -140,6 +150,21 @@ public class Usuario {
         amigosYPeticiones.addAll(peticionesEnviadas);
         amigosYPeticiones.addAll(peticionesRecibidas);
         return amigosYPeticiones;
+    }
+    
+    public void registrarObservador(Observador o){
+        escuchadores.add(o);
+        o.actualizar();
+    }
+    
+    public void eliminarObservador(Observador o){
+        escuchadores.remove(o);
+    }
+    
+    private void actualizarObservadores(){
+        for (Observador o : escuchadores) {
+            o.actualizar();
+        }
     }
     
     public Usuario(String nombre, String primerApellido, String segundoapellido,String email, String contraseña) {

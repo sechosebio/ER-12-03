@@ -12,7 +12,7 @@ import javax.swing.ListModel;
  *
  * @author jose
  */
-public class Muro extends javax.swing.JFrame {
+public class Muro extends javax.swing.JFrame implements Observador{
 
     
     Dominio.Muro.Muro muro;
@@ -27,7 +27,8 @@ public class Muro extends javax.swing.JFrame {
         this.usuario = u;
         this.usuarios = usuariosNoAmigosNoPeticiones;
         initComponents();
-        actualizar();
+        u.registrarObservador(this);
+        muro.registrarObservador(this);
         
     }
     
@@ -38,6 +39,7 @@ public class Muro extends javax.swing.JFrame {
         return usuariosRestantes;
     }
     
+    @Override
     public final void actualizar(){
         
         nombreUsuario.setText(usuario.getNombre());
